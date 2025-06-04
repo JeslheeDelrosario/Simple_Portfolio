@@ -57,14 +57,11 @@ body{
     animation-delay: .4s; 
 }
 
-.navbar {
-    display: flex;
-    gap: 1.5rem;
-}
+
 
 /* Para sa Home,About.... */
 .navbar a {
-    /* font-size: 18px; */
+    font-size: 18px;
     
     color: #ededed; /* color ng mga anchor */
     text-decoration: none;
