@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Simple Portfolio</title>
     <link rel="stylesheet" href="Main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
-<script>
-    document.querySelector('.hamburger').addEventListener('click', () => {
-        document.querySelector('.navbar').classList.toggle('active');
-    });
-</script>
-<body>
-    
-    <header class="header">
-        <a href="#" class="logo" >Jeslhee</a>
-        
 
+<body>
+    <header class="header">
+        <a href="#" class="logo">Jeslhee</a>
+        <div class="hamburger">
+            
+        </div>
         <nav class="navbar">
             <a href="#Home" class="active">Home</a>
             <a href="#About">About</a>
             <a href="#Skills">Skills</a>
-            <a href="#">Portfolio</a>
-            <a href="#"></a>
+            <a href="#Portfolio">Portfolio</a>
         </nav>
     </header>
-   
-    <section id="Home"class="home">
+
+    <section id="Home" class="home">
         <div class="home-content">
-            <h1 class="animate__animated animate__backInDown">Hi, I'm John Jeslhee </h1>
-            <h3 class="animate__animated animate__backInRight">Software/ Web Developer</h3>
-            <p class="animate__animated animate__backInLeft">A computer science student aiming to become a full-stack developer, 
-                I strive to build responsive front-end interfaces with HTML, 
-                CSS, and JavaScript, while creating scalable back-end systems using Node.js, Python, or Java. 
-                My goal is to develop seamless web applications, continuously learn new technologies, 
+            <h1 class="animate__animated animate__backInDown">Hi, I'm John Jeslhee</h1>
+            <h3 class="animate__animated animate__backInRight">Software/Web Developer</h3>
+            <p class="animate__animated animate__backInLeft">
+                A computer science student aiming to become a full-stack developer,
+                I strive to build responsive front-end interfaces with HTML,
+                CSS, and JavaScript, while creating scalable back-end systems using Node.js, Python, or Java.
+                My goal is to develop seamless web applications, continuously learn new technologies,
                 and collaborate on innovative projects to solve real-world challenges.
             </p>
-                
             <div class="btn-box">
-                <a href="#">Hire Me</a>
-                <a href="#">Let's Talk</a>
-                
+                <a href="#"class="hire-me">Hire Me</a>
+                <a href="#" class="lets-talk">Let's Talk</a>
             </div>
         </div>
-
         <div class="home-sci">
-            <a href="#"><i class='bx bxl-linkedin' ></i></a>
-            <a href="#"><i class='bx bxl-gmail' ></i></a>
-            <a href="#"><i class='bx bxl-github' ></i></a>
+            <a href="https://www.linkedin.com/in/john-jeslheedelrosario/" aria-label="Visit my LinkedIn profile"><i
+                    class='bx bxl-linkedin'></i></a>
+            <a href="mailto:delrosariojohnjeslhee@gmail.com" aria-label="Send an email to John Jeslhee"><i
+                    class='bx bxl-gmail'></i></a>
+            <a href="https://github.com/JeslheeDelrosario" aria-label="Visit my GitHub profile"><i
+                    class='bx bxl-github'></i></a>
         </div>
-
         <span class="home-imgHover"></span>
     </section>
 
     <section id="About" class="about">
         <div class="about-content">
-            <h1>About ME</h1>
+            <h1>About Me</h1>
             <p>Hello! I’m John Jeslhee M. Del Rosario, a dedicated student
                 from Malolos, Bulacan, born on December 15, 2001. I’m
-                currently pursuing a Bachelor of Science in Mathematics with a major in Computer Science at Bulacan State
+                currently pursuing a Bachelor of Science in Mathematics with a major in Computer Science at Bulacan
+                State
                 University,
-                where I’ve been honing my analytical and problem-solving skills. My passion for technology led me to dive
+                where I’ve been honing my analytical and problem-solving skills. My passion for technology led me to
+                dive
                 into web
                 development, where I’ve developed beginner-level proficiency in HTML, CSS, and JavaScript. I love
                 experimenting with
@@ -73,37 +70,79 @@
                 craft.</p>
             <p>My journey in computer science has been both challenging and
                 rewarding, pushing me to explore the endless
-                possibilities of software development. From building simple webpages to tackling small projects, I’m driven
+                possibilities of software development. From building simple webpages to tackling small projects, I’m
+                driven
                 by a
                 curiosity to understand how things work behind the scenes and a desire to create solutions that make a
                 difference.
-                Beyond academics, I’m an active individual who enjoys playing basketball, biking through scenic routes, and
+                Beyond academics, I’m an active individual who enjoys playing basketball, biking through scenic routes,
+                and
                 embracing
                 new challenges that fuel my personal and professional growth. My ultimate goal is to become a skilled
                 full-stack
                 developer, crafting innovative and impactful web applications that connect people and ideas.
             </p>
-    
         </div>
-        </section>
-         
     </section>
 
     <section id="Skills" class="skl">
-        
-      
-        
         <div class="skils-content">
-
-            <img src="css-3.png" alt="HTML">
-            <img src="html-5.png" alt="CSS">
-            <img src="JavaScript_logo_PNG_(12).png" alt="JavaScript">
-
+            <img src="css-3.png" alt="CSS3 logo">
+            <img src="html-5.png" alt="HTML5 logo">
+            <img src="JavaScript_logo_PNG_(12).png" alt="JavaScript logo">
         </div>
-         
     </section>
 
+    <section id="Portfolio" class="portfolio">
+        <div class="portfolio-content">
+            <h1>My Projects</h1>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>A simple webpage built with HTML, CSS, and JavaScript.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>An interactive web app using JavaScript for dynamic content.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <div id="contact-modal" class="contact-modal">
+        <div class="contact-content">
+            <span class="close-modal"><i class='bx bx-x'></i></span>
+            <h1>Contact Me</h1>
+            <form action="mailto:delrosariojohnjeslhee@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
 
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+
+        document.querySelector('.lets-talk').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#contact-modal').classList.add('visible');
+        });
+
+        document.querySelector('.hire-me').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#contact-modal').classList.add('visible');
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.querySelector('#contact-modal').classList.remove('visible');
+        });
+    </script>
 </body>
+
 </html>
