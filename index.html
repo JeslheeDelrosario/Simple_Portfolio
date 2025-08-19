@@ -113,14 +113,15 @@
 
     <div id="contact-modal" class="contact-modal">
         <div class="contact-content">
-            <span class="close-modal"><i class='bx bx-x'></i></span>
+            <span class="close-modal"><i class='bx bx-x' aria-label="Close contact form"></i></span>
             <h1>Contact Me</h1>
-            <form action="mailto:delrosariojohnjeslhee@gmail.com" method="post" enctype="text/plain">
+            <form id="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
+            <div id="success-message" class="success-message">Successfully sent!</div>
         </div>
     </div>
 
@@ -128,19 +129,46 @@
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.navbar').classList.toggle('active');
         });
-
-        document.querySelector('.lets-talk').addEventListener('click', (e) => {
+        
+        document.querySelector('.hire-me').addEventListener('click', (e) => {
             e.preventDefault();
             document.querySelector('#contact-modal').classList.add('visible');
         });
-
-        document.querySelector('.hire-me').addEventListener('click', (e) => {
+        document.querySelector('.lets-talk').addEventListener('click', (e) => {
             e.preventDefault();
             document.querySelector('#contact-modal').classList.add('visible');
         });
 
         document.querySelector('.close-modal').addEventListener('click', () => {
             document.querySelector('#contact-modal').classList.remove('visible');
+            document.querySelector('#success-message').classList.remove('visible');
+            document.querySelector('#contact-form').reset();
+        });
+
+        document.querySelector('#contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const successMessage = document.querySelector('#success-message');
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    successMessage.classList.add('visible');
+                    setTimeout(() => {
+                        successMessage.classList.remove('visible');
+                        form.reset();
+                        document.querySelector('#contact-modal').classList.remove('visible');
+                    }, 2000);
+                } else {
+                    alert('Failed to send message. Please try again.');
+                }
+            } catch (error) {
+                console.error('Form submission failed:', error);
+                alert('An error occurred. Please try again.');
+            }
         });
     </script>
 </body>

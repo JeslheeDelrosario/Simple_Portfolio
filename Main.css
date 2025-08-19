@@ -444,6 +444,18 @@ body{
 .close-modal:hover {
     color: #ededed;
 }
+.success-message {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background: #00abf0;
+    color: #081b29;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.success-message.visible {
+    display: block;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
