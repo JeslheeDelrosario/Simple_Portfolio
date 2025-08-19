@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="Main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Added: Include AOS CSS for scroll animations -->
 </head>
 
 <body>
@@ -21,14 +23,14 @@
             <a href="#Home" class="active">Home</a>
             <a href="#About">About</a>
             <a href="#Skills">Skills</a>
-            <a href="#Portfolio">Portfolio</a>
+            <a href="#Projects">Projects</a>
         </nav>
     </header>
 
     <section id="Home" class="home">
         <div class="home-content">
             <h1 class="animate__animated animate__backInDown">Hi, I'm John Jeslhee</h1>
-            <h3 class="animate__animated animate__backInRight">Software/Web Developer</h3>
+            <h3 class="animate__animated animate__backInRight">Software Engineer / Web Developer</h3>
             <p class="animate__animated animate__backInLeft">
                 A computer science student aiming to become a full-stack developer,
                 I strive to build responsive front-end interfaces with HTML,
@@ -86,30 +88,39 @@
     </section>
 
     <section id="Skills" class="skl">
-        <div class="skils-content">
-            <img src="css-3.png" alt="CSS3 logo">
-            <img src="html-5.png" alt="HTML5 logo">
-            <img src="JavaScript_logo_PNG_(12).png" alt="JavaScript logo">
+        <div class="skils-content" data-aos="fade-up" data-aos-anchor-placement="center-center">
+            <!-- Modified: Added data-aos="zoom-in" to each img tag for scroll-triggered zoom-in animation -->
+            <img src="images/css-3.png" alt="CSS3 logo" data-aos="zoom-in">
+            <img src="images/html-5.png" alt="HTML5 logo" data-aos="zoom-in">
+            <img src="images/JavaScript_logo_PNG_(12).png" data-aos="zoom-in">
+            <img src="images/python.png" alt="Python logo" data-aos="zoom-in">
+            <img src="images/Api.png" alt="Node.js logo" data-aos="zoom-in">
+            <img src="images/appscript.png" alt="Git logo" data-aos="zoom-in">
+            <img src="images/Csharp.png" alt="Java logo" data-aos="zoom-in">
+            <img src="images/java.png" alt="React logo" data-aos="zoom-in">
         </div>
     </section>
 
-    <section id="Portfolio" class="portfolio">
+    <section id="Projects" class="portfolio">
         <div class="portfolio-content">
             <h1>My Projects</h1>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Project 1</h3>
+                    <h3>Just.3d</h3>
                     <p>A simple webpage built with HTML, CSS, and JavaScript.</p>
-                    <a href="#">View Project</a>
+                    <!-- Updated data-images with provided Project 1 images -->
+                    <a href="#" class="view-project" data-images="images/j1.png images/j2.png images/j3.png images/j4.png">View Project</a>
                 </div>
                 <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>An interactive web app using JavaScript for dynamic content.</p>
-                    <a href="#">View Project</a>
+                    <h3>Payroll Management System</h3>
+                    <p>An automation web app using Google Apps Script, Java Script, Bootstrap, APi.</p>
+                    <!-- Updated data-images with provided Project 2 images -->
+                    <a href="#" class="view-project" data-images="images/p1.png images/p2.png images/p3.png">View Project</a>
                 </div>
             </div>
         </div>
     </section>
+
 
     <div id="contact-modal" class="contact-modal">
         <div class="contact-content">
@@ -125,7 +136,21 @@
         </div>
     </div>
 
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-prev">←</button>
+        <img src="" alt="Project Image" class="lightbox-image">
+        <button class="lightbox-next">→</button>
+        <span class="lightbox-counter"></span>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 1000, // Added: Initialize AOS with 1-second duration
+            once: true,    // Added: Ensure animations trigger only once
+            offset: 100    // Added: Trigger animation 100px before element is in view
+        });
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.navbar').classList.toggle('active');
         });
@@ -168,6 +193,71 @@
             } catch (error) {
                 console.error('Form submission failed:', error);
                 alert('An error occurred. Please try again.');
+            }
+        });
+
+       // Lightbox functionality
+        const viewProjectLinks = document.querySelectorAll('.view-project');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.querySelector('.lightbox-image');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxPrev = document.querySelector('.lightbox-prev');
+        const lightboxNext = document.querySelector('.lightbox-next');
+        const lightboxCounter = document.querySelector('.lightbox-counter');
+
+        let currentImages = [];
+        let currentIndex = 0;
+
+        viewProjectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Split the data-images attribute into an array of image paths
+                currentImages = link.getAttribute('data-images').split(' ');
+                currentIndex = 0;
+                updateLightbox();
+                lightbox.classList.add('visible');
+            });
+        });
+
+        function updateLightbox() {
+            if (currentImages.length > 0) {
+                // Update the image source and counter
+                lightboxImage.src = currentImages[currentIndex];
+                lightboxCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+            }
+        }
+
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateLightbox();
+            }
+        });
+
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentIndex < currentImages.length - 1) {
+                currentIndex++;
+                updateLightbox();
+            }
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('visible');
+            currentImages = [];
+            currentIndex = 0;
+            lightboxImage.src = '';
+            lightboxCounter.textContent = '';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('visible');
+                currentImages = [];
+                currentIndex = 0;
+                lightboxImage.src = '';
+                lightboxCounter.textContent = '';
             }
         });
     </script>
