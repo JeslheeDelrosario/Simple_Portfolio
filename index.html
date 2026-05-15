@@ -48,7 +48,7 @@
     </h1>
 
     <p class="hero-sub">
-        CS student & aspiring full-stack developer — building responsive interfaces and scalable back-end systems.
+        CS student & aspiring Web Developer — building responsive interfaces and scalable back-end systems.
     </p>
 
     <div class="hero-actions">
@@ -152,13 +152,109 @@
             </a>
         </div>
         <div class="project-card">
-            <span class="project-num">Project 3 (Thesis Project)</span>
-            <h3 class="project-title">Towards Intelligent Student Assistance (TISA)</h3>
-            <p class="project-desc">TISA is a comprehensive AI-powered learning management system designed for College of Science Students in Bulacan State University. The platform integrates advanced AI tutoring capabilities with robust academic management features, providing students with personalized learning experiences while streamlining administrative processes.</p>
-            <a href="#" class="project-link view-project" data-images="images/projects/t1.png images/projects/t2.png images/projects/t3.png images/projects/t4.png images/projects/t5.png images/projects/t6.png images/projects/t7.png">
+    <span class="project-num">Project 3 (Thesis Project)</span>
+    <h3 class="project-title">TISA - Towards Intelligent Student Assistance</h3>
+    <p class="project-desc">
+        An AI-powered learning management system designed for College of Science Students at Bulacan State University. The platform integrates advanced AI tutoring capabilities with robust academic management features, including SSO, calendar management, weather integration, and task tracking.
+    </p>
+    
+    <!-- Key Features -->
+    <ul class="project-features" style="margin: 12px 0 12px 20px; font-size: 0.9rem; color: #ccc;">
+        <li>🤖 AI Tutor (TISA) – Context-aware assistant with conversation continuity</li>
+        <li>🔐 SSO Authentication – Keycloak integration with JWT & role-based access</li>
+        <li>📅 Calendar Management – Classroom scheduling, holiday calendar, event management</li>
+        <li>🌤️ Weather Integration – Real-time weather & 7-day forecast for Bulacan</li>
+        <li>✅ Task Management – Create, prioritize, and track task completion</li>
+        <li>📚 Learning Management – Course enrollment, lesson viewer, progress tracking</li>
+        <li>🔔 Real-time Notifications – Bell icon with unread count & history</li>
+        <li>🛠️ Admin Dashboard – Room, faculty, curriculum, user management</li>
+        <li>⚡ Performance – Redis caching, optimized queries, rate limiting</li>
+    </ul>
+    
+    <!-- Tech Stack -->
+    <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">React 18 + TypeScript</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Vite</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">TailwindCSS + Radix UI</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Node.js + Express</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Prisma ORM</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">PostgreSQL + Redis</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Keycloak SSO</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Docker + Docker Compose</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">OpenAI/Anthropic/Gemini</span>
+        <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">OpenWeatherMap API</span>
+    </div>
+    
+    <!-- Challenges / Architecture Highlights -->
+    <details style="margin: 10px 0; font-size: 0.85rem; color: #aaa;">
+        <summary style="cursor: pointer; font-weight: bold;">⚙️ System Architecture & Challenges</summary>
+        <ul style="margin: 8px 0 0 20px;">
+            <li>Multi-provider AI service integration (OpenAI, Anthropic, Google Gemini)</li>
+            <li>Redis caching layer for weather API (3-hour TTL, reduced latency)</li>
+            <li>Keycloak SSO with JWT authentication and role-based access control</li>
+            <li>Dockerized microservices (PostgreSQL, Keycloak, Redis) for consistent dev/prod parity</li>
+            <li>Google Calendar OAuth integration for personalized event syncing</li>
+            <li>Real-time notification system with unread count and history</li>
+            <li>Environment configuration management across dev/production</li>
+        </ul>
+    </details>
+    
+    <!-- Quick Stats / Deployment Badges -->
+    <div class="project-meta" style="margin: 12px 0; display: flex; gap: 15px; font-size: 0.75rem; color: #888;">
+        <span>📦 Status: Production Ready</span>
+        <span>📝 License: MIT</span>
+        <span>🐳 Dockerized</span>
+        <span>🔐 SSO Enabled</span>
+    </div>
+    
+    <a href="#" class="project-link view-project" data-images="images/projects/t1.png images/projects/t2.png images/projects/t3.png images/projects/t4.png images/projects/t5.png images/projects/t6.png images/projects/t7.png">
+        View Project <i class='bx bx-link-external'></i>
+    </a>
+</div>
+        <div class="project-card">
+            <span class="project-num">Project 4</span>
+            <h3 class="project-title">ListaGo - Modern To-Do List Application with Project Management</h3>
+            <p class="project-desc">
+                I designed and developed a comprehensive task management application that helps users organize their workflow through projects, set due dates, and track task completion with an elegant, intuitive interface.
+            </p>
+            
+            <!-- Key Features -->
+            <ul class="project-features" style="margin: 12px 0 12px 20px; font-size: 0.9rem; color: #ccc;">
+                <li>✅ Project Organization – Custom projects with color-coded icons</li>
+                <li>✅ Multiple Views – Dashboard, today's tasks, upcoming tasks, complete task list</li>
+                <li>✅ Responsive Design – Slide-in sidebar for mobile/tablet/desktop</li>
+                <li>✅ Modern UI/UX – Glassmorphism with smooth animations</li>
+                <li>✅ Data Persistence – LocalStorage saves tasks & projects between sessions</li>
+                <li>✅ Bulk Actions – Select & delete multiple tasks with confirmation modals</li>
+                <li>✅ Advanced Filtering – Today, upcoming, or overdue categorization</li>
+                <li>✅ Dashboard Analytics – Visual stats for total, pending & completed tasks</li>
+            </ul>
+            
+            <!-- Tech Stack -->
+            <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px;">
+                <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Vanilla JS (ES6+)</span>
+                <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">CSS3 + Glassmorphism</span>
+                <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">LocalStorage</span>
+                <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Font Awesome</span>
+                <span style="background: #2d2d2d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;">Mobile-First Design</span>
+            </div>
+            
+            <!-- Challenges Solved (optional, can be collapsed or shortened) -->
+            <details style="margin: 10px 0; font-size: 0.85rem; color: #aaa;">
+                <summary style="cursor: pointer; font-weight: bold;">🔧 Challenges Solved</summary>
+                <ul style="margin: 8px 0 0 20px;">
+                    <li>Mobile slide-in sidebar across all modern browsers</li>
+                    <li>Unified modal system for delete confirmations</li>
+                    <li>Custom dropdown component replacing native selects</li>
+                    <li>Debouncing to prevent rapid UI performance issues</li>
+                    <li>Smooth scrolling & safe area handling for iOS</li>
+                </ul>
+            </details>
+            
+            <a href="#" class="project-link view-project" data-images="images/projects/td1.png images/projects/td2.png images/projects/td3.png images/projects/td4.png images/projects/td5.png images/projects/td6.png">
                 View Project <i class='bx bx-link-external'></i>
             </a>
-        </div>
+        </div>  
     </div>
 </section>
 
