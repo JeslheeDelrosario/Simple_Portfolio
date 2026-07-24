@@ -6,12 +6,10 @@
     <title>Jeslhee Portfolio</title>
     
     <!-- Favicons -->
-    <link rel="icon" href="./favicon.ico" sizes="any">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./Images/favi/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="./Images/favi/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./Images/favi/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./Images/favi/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="./Images/favi/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="./Images/favi/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="./Images/favi/apple-touch-icon.png">
     <link rel="manifest" href="./Images/favi/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -332,10 +330,17 @@
 
 <!-- EMAIL MODAL -->
 <div id="email-modal" class="contact-modal">
-    <div class="contact-content">
+    <div class="contact-content email-modal-card">
         <span class="close-email-modal"><i class='bx bx-x'></i></span>
-        <h2>Send <span>Email.</span></h2>
-        <form id="email-form" action="https://formspree.io/f/xdkdrnyv" method="post">
+        <div class="modal-heading">
+            <div class="modal-icon"><i class='bx bx-envelope'></i></div>
+            <div>
+                <p class="modal-kicker">Direct contact</p>
+                <h2>Send <span>Email.</span></h2>
+            </div>
+        </div>
+        <p class="modal-copy">Share a quick overview of your idea and I’ll reply as soon as I can.</p>
+        <form id="email-form" class="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="text" name="subject" placeholder="Subject" value="Portfolio Inquiry" required>
@@ -361,16 +366,27 @@
 function toggleProjectDetails(card) {
     const details = card.querySelector('.project-details');
     const hint = card.querySelector('.expand-hint i');
-    
-    // Toggle visibility
-    if (details.style.display === 'none') {
-        details.style.display = 'block';
-        hint.classList.remove('bx-chevron-down');
-        hint.classList.add('bx-chevron-up');
-    } else {
+    const isOpen = details.style.display === 'block';
+
+    document.querySelectorAll('.project-card').forEach(project => {
+        const projectDetails = project.querySelector('.project-details');
+        const projectHint = project.querySelector('.expand-hint i');
+
+        if (project === card) return;
+
+        projectDetails.style.display = 'none';
+        projectHint.classList.remove('bx-chevron-up');
+        projectHint.classList.add('bx-chevron-down');
+    });
+
+    if (isOpen) {
         details.style.display = 'none';
         hint.classList.remove('bx-chevron-up');
         hint.classList.add('bx-chevron-down');
+    } else {
+        details.style.display = 'block';
+        hint.classList.remove('bx-chevron-down');
+        hint.classList.add('bx-chevron-up');
     }
 }
 
