@@ -27,6 +27,32 @@
     });
     modal.addEventListener('click', e => { if(e.target === modal) modal.classList.remove('visible'); });
 
+    // Email Modal
+const emailModal = document.getElementById('email-modal');
+document.querySelectorAll('.open-email-modal').forEach(el => {
+    el.addEventListener('click', e => { e.preventDefault(); emailModal.classList.add('visible'); });
+});
+document.querySelector('.close-email-modal').addEventListener('click', () => {
+    emailModal.classList.remove('visible');
+    document.getElementById('email-success-message').classList.remove('visible');
+    document.getElementById('email-form').reset();
+});
+emailModal.addEventListener('click', e => { if(e.target === emailModal) emailModal.classList.remove('visible'); });
+
+// Email form submit
+document.getElementById('email-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.target;
+    const msg = document.getElementById('email-success-message');
+    try {
+        const res = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{ Accept:'application/json' } });
+        if(res.ok) {
+            msg.classList.add('visible');
+            setTimeout(() => { msg.classList.remove('visible'); form.reset(); emailModal.classList.remove('visible'); }, 2000);
+        } else { alert('Failed to send. Try again.'); }
+    } catch(err) { alert('An error occurred. Try again.'); }
+});
+
     // Form submit
     document.getElementById('contact-form').addEventListener('submit', async e => {
         e.preventDefault();
