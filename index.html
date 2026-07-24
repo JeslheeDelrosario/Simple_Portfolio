@@ -35,37 +35,123 @@
     </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO - 2026 Edition -->
 <section id="Home">
-    <div class="hero-bg-text">DEV</div>
+    <!-- Noise Texture Overlay -->
+    <div class="hero-noise"></div>
 
-    <div class="hero-badge">Available for work</div>
-
-    <h1 class="hero-name">
-        John<br>Jeslhee<span class="accent">.</span>
-    </h1>
-
-    <p class="hero-sub">
-        Full-Stack Developer & Recent Graduate — building production-ready web applications that solve real problems.
-    </p>
-
-    <div class="hero-actions">
-        <a href="#" class="btn-primary hire-me">Hire Me <i class='bx bx-right-arrow-alt'></i></a>
-        <a href="#" class="btn-ghost lets-talk">Let's Talk</a>
+    <!-- Large Abstract Decorative Shapes -->
+    <div class="hero-abstract">
+        <div class="abstract-ampersand">&amp;</div>
+        <div class="abstract-circle abstract-circle--1"></div>
+        <div class="abstract-circle abstract-circle--2"></div>
+        <div class="abstract-line abstract-line--1"></div>
+        <div class="abstract-line abstract-line--2"></div>
+        <div class="abstract-dot abstract-dot--1"></div>
+        <div class="abstract-dot abstract-dot--2"></div>
+        <div class="abstract-dot abstract-dot--3"></div>
     </div>
 
-    <div class="hero-panel">
-        <div class="hero-media">
-            <img src="Images/me/IMG_7850.png" alt="John Jeslhee portrait">
+    <!-- Decorative Stars -->
+    <div class="hero-stars">
+        <span class="star star--1">✦</span>
+        <span class="star star--2">✧</span>
+        <span class="star star--3">✦</span>
+        <span class="star star--4">✧</span>
+        <span class="star star--5">✦</span>
+    </div>
+
+    <!-- Scribble Lines -->
+    <div class="hero-scribbles">
+        <svg class="scribble scribble--1" viewBox="0 0 100 30" fill="none">
+            <path d="M2 15 Q20 0 40 15 Q60 30 80 15 Q90 5 98 15" stroke="rgba(200,245,66,0.12)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="scribble scribble--2" viewBox="0 0 80 40" fill="none">
+            <path d="M2 20 Q15 5 30 20 Q45 35 60 20 Q70 10 78 20" stroke="rgba(200,245,66,0.08)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-left">
+            <!-- Status Badge -->
+            <div class="hero-badge">Available for work</div>
+
+            <!-- Animated Name -->
+            <h1 class="hero-name">
+                <span class="line"><span>John</span></span>
+                <span class="line"><span>Jeslhee<span class="accent">.</span></span></span>
+            </h1>
+
+            <p class="hero-sub">
+                Full-Stack Developer &amp; Recent Graduate — building production-ready web applications that solve real problems.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions">
+                <a href="#" class="btn-primary hire-me">Hire Me <i class='bx bx-right-arrow-alt'></i></a>
+                <a href="#" class="btn-ghost lets-talk">Let's Talk</a>
+            </div>
+
+            <!-- Metrics Strip -->
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <span class="metric-num" data-target="4">0</span>
+                    <span class="metric-label">Projects</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num" data-target="13">0</span>
+                    <span class="metric-label">Technologies</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num" data-target="2">0</span>
+                    <span class="metric-label">Years Coding</span>
+                </div>
+            </div>
         </div>
-        <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/john-jeslheedelrosario/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-            <a href="#" class="open-email-modal" aria-label="Email"><i class='bx bxl-gmail'></i></a>
-            <a href="https://github.com/JeslheeDelrosario" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+
+        <div class="hero-right">
+            <!-- Person Card: Dark rounded rectangle behind the cutout person -->
+            <div class="person-card">
+                <!-- Dark rounded rectangle backdrop -->
+                <div class="person-card-bg"></div>
+                <!-- Person image (PNG cutout style) -->
+                <div class="person-image">
+                    <img src="Images/me/IMG_7850.png" alt="John Jeslhee portrait">
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/john-jeslheedelrosario/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" class="open-email-modal" aria-label="Email"><i class='bx bxl-gmail'></i></a>
+                <a href="https://github.com/JeslheeDelrosario" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            </div>
         </div>
     </div>
 
-    <div class="scroll-line"></div>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span class="scroll-indicator-label">Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+
+    <!-- Tech Marquee -->
+    <div class="hero-marquee">
+        <div class="hero-marquee-track">
+            <span class="hero-marquee-item"><img src="Images/stack/react.png" alt="React"> React <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/typescript.png" alt="TS"> TypeScript <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/nodejs.png" alt="Node"> Node.js <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/postgresql.png" alt="Postgres"> PostgreSQL <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/tailwind.png" alt="Tailwind"> Tailwind <span>•</span></span>
+            <span class="hero-marquee-item"><img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" alt="Docker"> Docker <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/react.png" alt="React"> React <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/typescript.png" alt="TS"> TypeScript <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/nodejs.png" alt="Node"> Node.js <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/postgresql.png" alt="Postgres"> PostgreSQL <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/tailwind.png" alt="Tailwind"> Tailwind <span>•</span></span>
+            <span class="hero-marquee-item"><img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" alt="Docker"> Docker <span>•</span></span>
+        </div>
+    </div>
 </section>
 
 <!-- ABOUT -->
@@ -317,14 +403,21 @@
 <div id="contact-modal" class="contact-modal">
     <div class="contact-content">
         <span class="close-modal"><i class='bx bx-x'></i></span>
-        <h2>Let's <span>Talk.</span></h2>
-        <form id="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
+        <div class="modal-heading">
+            <div class="modal-icon"><i class='bx bx-chat'></i></div>
+            <div>
+                <p class="modal-kicker">Get in touch</p>
+                <h2>Let's <span>Talk.</span></h2>
+            </div>
+        </div>
+        <p class="modal-copy">Have a project in mind or just want to say hello? Drop a message and I'll get back to you within 24 hours.</p>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit">Send Message <i class='bx bx-send'></i></button>
         </form>
-        <div id="success-message" class="success-message">Message sent successfully!</div>
+        <div id="success-message" class="success-message">✓ Message sent successfully!</div>
     </div>
 </div>
 
@@ -345,7 +438,7 @@
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="text" name="subject" placeholder="Subject" value="Portfolio Inquiry" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Email</button>
+<button type="submit">Send Email <i class='bx bx-send'></i></button>
         </form>
         <div id="email-success-message" class="success-message">Email sent successfully!</div>
     </div>
@@ -390,7 +483,6 @@ function toggleProjectDetails(card) {
     }
 }
 
-// Existing code continues...
 </script>
 </body>
 </html>

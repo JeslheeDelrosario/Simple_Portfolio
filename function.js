@@ -92,7 +92,104 @@ document.getElementById('email-form').addEventListener('submit', async e => {
     document.querySelector('.lightbox-prev').addEventListener('click', e => { e.stopPropagation(); if(currentIndex>0){currentIndex--;updateLightbox();} });
     document.querySelector('.lightbox-next').addEventListener('click', e => { e.stopPropagation(); if(currentIndex<currentImages.length-1){currentIndex++;updateLightbox();} });
 
-    // Skill cell scroll animation
+    // ── Particle Canvas ──
+    const canvas = document.getElementById('particleCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animId;
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.opacity = Math.random() * 0.4 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(200, 245, 66, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 80);
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(200, 245, 66, ${0.06 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            connectParticles();
+            animId = requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    }
+
+    // ── Metric Counters ──
+    function animateCounters() {
+        const metrics = document.querySelectorAll('.metric-num');
+        metrics.forEach(el => {
+            const target = parseInt(el.getAttribute('data-target'));
+            const duration = 2000;
+            const startTime = performance.now();
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target);
+                if (progress < 1) requestAnimationFrame(updateCounter);
+            }
+            requestAnimationFrame(updateCounter);
+        });
+    }
+
+    // ── Trigger counters on hero visibility ──
+    const heroObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                heroObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    const heroMetrics = document.querySelector('.hero-metrics');
+    if (heroMetrics) heroObserver.observe(heroMetrics);
+
+// Skill cell scroll animation
     const observer = new IntersectionObserver(entries => {
         entries.forEach((entry, i) => {
             if(entry.isIntersecting) {
