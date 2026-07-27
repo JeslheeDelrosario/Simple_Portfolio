@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeslhee Portfolio</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" href="./Images/favi/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="./Images/favi/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="./Images/favi/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="./Images/favi/apple-touch-icon.png">
+    <link rel="manifest" href="./Images/favi/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<header>
+    <a href="#" class="logo">Jeslhee<span>.</span></a>
+    <nav id="navbar">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Projects">Projects</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<!-- HERO - 2026 Edition -->
+<section id="Home">
+    <!-- Noise Texture Overlay -->
+    <div class="hero-noise"></div>
+
+    <!-- Large Abstract Decorative Shapes -->
+    <div class="hero-abstract">
+        <div class="abstract-ampersand">&amp;</div>
+        <div class="abstract-circle abstract-circle--1"></div>
+        <div class="abstract-circle abstract-circle--2"></div>
+        <div class="abstract-line abstract-line--1"></div>
+        <div class="abstract-line abstract-line--2"></div>
+        <div class="abstract-dot abstract-dot--1"></div>
+        <div class="abstract-dot abstract-dot--2"></div>
+        <div class="abstract-dot abstract-dot--3"></div>
+    </div>
+
+    <!-- Decorative Stars -->
+    <div class="hero-stars">
+        <span class="star star--1">✦</span>
+        <span class="star star--2">✧</span>
+        <span class="star star--3">✦</span>
+        <span class="star star--4">✧</span>
+        <span class="star star--5">✦</span>
+    </div>
+
+    <!-- Scribble Lines -->
+    <div class="hero-scribbles">
+        <svg class="scribble scribble--1" viewBox="0 0 100 30" fill="none">
+            <path d="M2 15 Q20 0 40 15 Q60 30 80 15 Q90 5 98 15" stroke="rgba(200,245,66,0.12)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="scribble scribble--2" viewBox="0 0 80 40" fill="none">
+            <path d="M2 20 Q15 5 30 20 Q45 35 60 20 Q70 10 78 20" stroke="rgba(200,245,66,0.08)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-left">
+            <!-- Status Badge -->
+            <div class="hero-badge">Available for work</div>
+
+            <!-- Animated Name -->
+            <h1 class="hero-name">
+                <span class="line"><span>John</span></span>
+                <span class="line"><span>Jeslhee<span class="accent">.</span></span></span>
+            </h1>
+
+            <p class="hero-sub">
+                Entry-Level Full-Stack Developer &amp; Fresh Graduate — building modern web applications while growing my skills.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions">
+                <a href="#" class="btn-primary hire-me">Hire Me <i class='bx bx-right-arrow-alt'></i></a>
+                <a href="#" class="btn-ghost lets-talk">Let's Talk</a>
+            </div>
+
+            <!-- Metrics Strip -->
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <span class="metric-num" data-target="4">0</span>
+                    <span class="metric-label">Projects</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num" data-target="21">0</span>
+                    <span class="metric-label">Technologies</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num" data-target="1">0</span>
+                    <span class="metric-label">Years Coding</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            
+            <div class="person-card">
+                <!-- Dark rounded rectangle backdrop -->
+                <div class="person-card-bg"></div>
+                <!-- Person image (PNG cutout style) -->
+                <div class="person-image">
+                    <img src="Images/me/IMG_7850.png" alt="John Jeslhee portrait">
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/john-jeslheedelrosario/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" class="open-email-modal" aria-label="Email"><i class='bx bxl-gmail'></i></a>
+                <a href="https://github.com/JeslheeDelrosario" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span class="scroll-indicator-label">Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+
+    <!-- Tech Marquee -->
+    <div class="hero-marquee">
+        <div class="hero-marquee-track">
+            <span class="hero-marquee-item"><img src="Images/stack/react.png" alt="React"> React <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/typescript.png" alt="TypeScript"> TypeScript <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/nodejs.png" alt="Node.js"> Node.js <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/express.png" alt="Express.js"> Express.js <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/postgresql.png" alt="PostgreSQL"> PostgreSQL <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/tailwind.png" alt="Tailwind"> Tailwind <span>•</span></span>
+            <span class="hero-marquee-item"><img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" alt="Docker"> Docker <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/git.png" alt="Git"> Git <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/github.png" alt="GitHub"> GitHub <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/keycloak.png" alt="Keycloak"> Keycloak <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/openai.png" alt="OpenAI"> OpenAI <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/java.png" alt="Java"> Java <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/react.png" alt="React"> React <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/typescript.png" alt="TypeScript"> TypeScript <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/nodejs.png" alt="Node.js"> Node.js <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/express.png" alt="Express.js"> Express.js <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/postgresql.png" alt="PostgreSQL"> PostgreSQL <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/tailwind.png" alt="Tailwind"> Tailwind <span>•</span></span>
+            <span class="hero-marquee-item"><img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" alt="Docker"> Docker <span>•</span></span>
+            <span class="hero-marquee-item"><img src="Images/stack/git.png" alt="Git"> Git <span>•</span></span>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="About">
+    <div class="about-left">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">A builder,<br>not just<br>a coder.</h2>
+        <div class="about-tagline">
+            <span class="tagline-badge"><i class='bx bx-brain'></i> Math Major &amp; Full-Stack Dev</span>
+        </div>
+        <div class="about-stat">
+            <div class="stat-item">
+                <div class="stat-num">BSM CS</div>
+                <div class="stat-label">Mathematics — Computer Science</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">4+</div>
+                <div class="stat-label">Production &amp; Full-Stack Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">21</div>
+                <div class="stat-label">Technologies in Stack</div>
+            </div>
+        </div>
+        <div class="about-left-cta">
+            <a href="#" class="btn-ghost lets-talk"><i class='bx bx-paper-plane'></i> Let's Talk</a>
+        </div>
+    </div>
+    
+    <div class="about-right">
+        <!-- Interactive Navigation Tabs -->
+        <div class="about-tabs">
+            <button class="about-tab-btn active" data-tab="tab-story">
+                <i class='bx bx-user-pin'></i> My Story
+            </button>
+            <button class="about-tab-btn" data-tab="tab-pillars">
+                <i class='bx bx-layer'></i> Core Pillars
+            </button>
+            <button class="about-tab-btn" data-tab="tab-facts">
+                <i class='bx bx-grid-alt'></i> Quick Facts
+            </button>
+        </div>
+
+        <!-- Tab 1: Story -->
+        <div class="about-tab-content active" id="tab-story">
+    <div class="story-highlight-box">
+        <i class='bx bxs-quote-right quote-icon'></i>
+        <p class="quote-text">Passionate about building practical web applications and continuously learning modern software development.</p>
+    </div>
+
+    <p>Hello! I'm <strong>John Jeslhee M. Del Rosario</strong>, a fresh graduate from <strong>Bulacan State University</strong> with a Bachelor of Science in Mathematics specializing in Computer Science. Based in Malolos, Bulacan, I'm seeking an <strong>entry-level full-stack, frontend, or backend developer role</strong> where I can continue growing as a software developer while contributing to meaningful projects.</p>
+
+    <p>Through academic and personal projects, I've built responsive web applications using <span class="tech-pill"><img src="images/stack/react.png" alt="React"> React</span>, <span class="tech-pill"><img src="images/stack/typescript.png" alt="TypeScript"> TypeScript</span>, <span class="tech-pill"><img src="images/stack/tailwind.png" alt="Tailwind"> Tailwind CSS</span>, <span class="tech-pill"><img src="images/stack/nodejs.png" alt="Node.js"> Node.js</span>, <span class="tech-pill"><img src="Images/stack/express.png" alt="Express" style="filter: invert(1);"> Express</span>, and <span class="tech-pill"><img src="images/stack/postgresql.png" alt="PostgreSQL"> PostgreSQL</span>. I'm also comfortable using <span class="tech-pill"><img src="images/stack/git.png" alt="Git"> Git</span> and GitHub for version control and collaboration.</p>
+
+    <p>One of my notable projects is an AI-powered learning platform where I integrated <span class="tech-pill"><img src="Images/stack/openai.png" alt="OpenAI"> OpenAI</span> and <span class="tech-pill"><img src="images/stack/gemini.png" alt="Gemini"> Gemini</span> APIs to provide intelligent tutoring features. I've also developed a payroll management system using Google Apps Script and relational databases, giving me practical experience in designing APIs, integrating databases, and building user-focused web applications.</p>
+
+    <p>As a fresh graduate, I'm eager to learn new technologies, write clean and maintainable code, and continuously improve my skills while working with experienced developers in a collaborative environment.</p>
+</div>
+        <!-- Tab 2: Core Pillars -->
+       <div class="about-tab-content" id="tab-pillars">
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class='bx bx-math'></i></div>
+                    <h3>Analytical Problem Solving</h3>
+                    <p>My background in Mathematics helps me approach problems logically, break down complex requirements, and develop practical software solutions.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class='bx bx-code-alt'></i></div>
+                    <h3>Full-Stack Development</h3>
+                    <p>I enjoy building web applications from frontend to backend using React, TypeScript, Node.js, Express, and PostgreSQL while continuously improving my development skills.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class='bx bx-bot'></i></div>
+                    <h3>AI Integration</h3>
+                    <p>I have experience integrating OpenAI and Gemini APIs into web applications to build AI-powered features, including an intelligent tutoring platform for students.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class='bx bx-check-shield'></i></div>
+                    <h3>Clean & Maintainable Code</h3>
+                    <p>I strive to write readable, organized, and reusable code using TypeScript, Git, and modern development practices while continuously learning from every project.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Quick Facts Bento -->
+        <div class="about-tab-content" id="tab-facts">
+            <div class="facts-bento">
+                <div class="bento-item">
+                    <span class="bento-label"><i class='bx bx-book-bookmark'></i> Education</span>
+                    <h4>BS Mathematics</h4>
+                    <p>Specializing in Computer Science • Bulacan State University</p>
+                </div>
+
+                <div class="bento-item">
+                    <span class="bento-label"><i class='bx bx-map-pin'></i> Location</span>
+                    <h4>Malolos, Bulacan</h4>
+                    <p>Open to Remote, Hybrid, and On-Site Opportunities</p>
+                </div>
+
+                <div class="bento-item">
+                    <span class="bento-label"><i class='bx bx-briefcase'></i> Career Goal</span>
+                    <h4>Entry-Level Developer</h4>
+                    <p>Seeking opportunities to grow as a Full-Stack, Frontend, or Backend Developer.</p>
+                </div>
+
+                <div class="bento-item bento-featured">
+                    <span class="bento-label"><i class='bx bx-star'></i> Featured Project</span>
+                    <h4>TISA AI Learning Platform</h4>
+                    <p>An AI-powered learning platform built with React, Node.js, PostgreSQL, and TypeScript, integrating OpenAI and Gemini APIs to provide an intelligent tutoring experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="Skills" class="skills-hero-section">
+    <!-- Noise Overlay & Decorative Abstract Shapes -->
+    <div class="skills-noise"></div>
+    <div class="skills-abstract">
+        <div class="abstract-circle abstract-circle--skills-1"></div>
+        <div class="abstract-circle abstract-circle--skills-2"></div>
+        <span class="star star--skills-1">✦</span>
+        <span class="star star--skills-2">✧</span>
+        <span class="star star--skills-3">✦</span>
+    </div>
+
+    <div class="skills-container">
+        <!-- Section Header -->
+        <div class="skills-header">
+            <div class="hero-badge skills-badge">
+                <span class="pulse-dot"></span> Tech Ecosystem &amp; Stack
+            </div>
+            <h2 class="section-title skills-title">
+                My Stack<span class="accent">.</span>
+            </h2>
+            <p class="skills-subtitle">
+                A curated collection of frameworks, languages, and tools I use to architect modern, scalable, and intuitive web applications.
+            </p>
+
+            <!-- Interactive Filter Bar -->
+            <div class="skills-filter-bar">
+                <button class="skills-filter-btn active" data-filter="all">
+                    <span>All Tech</span> <span class="filter-count">21</span>
+                </button>
+                <button class="skills-filter-btn" data-filter="frontend">
+                    <i class='bx bx-laptop'></i> <span>Front-end</span> <span class="filter-count">7</span>
+                </button>
+                <button class="skills-filter-btn" data-filter="backend">
+                    <i class='bx bx-server'></i> <span>Back-end</span> <span class="filter-count">6</span>
+                </button>
+                <button class="skills-filter-btn" data-filter="devops">
+                    <i class='bx bx-terminal'></i> <span>DevOps &amp; Tools</span> <span class="filter-count">4</span>
+                </button>
+                <button class="skills-filter-btn" data-filter="ai">
+                    <i class='bx bx-bot'></i> <span>AI &amp; APIs</span> <span class="filter-count">3</span>
+                </button>
+                <button class="skills-filter-btn" data-filter="languages">
+                    <i class='bx bx-code-curly'></i> <span>Languages</span> <span class="filter-count">2</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-compact-grid">
+            <!-- Front-end -->
+            <div class="skill-card-compact" data-category="frontend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/react.png" alt="React">
+                    </div>
+                    <span class="skill-tag">Frontend</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">React</h3>
+                    <p class="skill-card-desc">Hooks, Context API, Component Architecture</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Core Stack</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="frontend languages">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/typescript.png" alt="TypeScript">
+                    </div>
+                    <span class="skill-tag">Language / UI</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">TypeScript</h3>
+                    <p class="skill-card-desc">Type Safety, Interfaces, Generics</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Core Stack</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="frontend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/tailwind.png" alt="Tailwind CSS">
+                    </div>
+                    <span class="skill-tag">CSS Framework</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Tailwind CSS</h3>
+                    <p class="skill-card-desc">Utility-First UI, Responsive Layouts</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Proficient</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="frontend languages">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/JavaScript_logo_PNG_(12).png" alt="JavaScript">
+                    </div>
+                    <span class="skill-tag">Core Language</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">JavaScript</h3>
+                    <p class="skill-card-desc">ES6+, Async/Await, DOM Manipulation</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Expert</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="frontend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/html-5.png" alt="HTML5">
+                    </div>
+                    <span class="skill-tag">Markup</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">HTML5</h3>
+                    <p class="skill-card-desc">Semantic Elements, SEO, Accessibility</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Expert</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="frontend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/css-3.png" alt="CSS3">
+                    </div>
+                    <span class="skill-tag">Styling</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">CSS3</h3>
+                    <p class="skill-card-desc">Flexbox, Grid, Glassmorphism, Animations</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Expert</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="frontend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/vite.png" alt="Vite">
+                    </div>
+                    <span class="skill-tag">Build Tool</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Vite</h3>
+                    <p class="skill-card-desc">Fast HMR, Bundling, Dev Server</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Proficient</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <!-- Back-end -->
+            <div class="skill-card-compact" data-category="backend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/nodejs.png" alt="Node.js">
+                    </div>
+                    <span class="skill-tag">Runtime</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Node.js</h3>
+                    <p class="skill-card-desc">Event-Driven Architecture, NPM, Microservices</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Core Stack</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="backend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="https://cdn.worldvectorlogo.com/logos/express-109.svg" alt="Express.js" style="filter: invert(1);">
+                    </div>
+                    <span class="skill-tag">Backend Framework</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Express.js</h3>
+                    <p class="skill-card-desc">REST API Routing, Middleware, Authentication</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Core Stack</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="backend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/postgresql.png" alt="PostgreSQL">
+                    </div>
+                    <span class="skill-tag">Database</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">PostgreSQL</h3>
+                    <p class="skill-card-desc">Relational Schemas, Complex Queries, Indexing</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Core Stack</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="backend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="https://cdn.worldvectorlogo.com/logos/prisma.svg" alt="Prisma">
+                    </div>
+                    <span class="skill-tag">ORM</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Prisma</h3>
+                    <p class="skill-card-desc">Type-safe DB Client, Migrations, Modeling</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Proficient</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="backend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="https://cdn.worldvectorlogo.com/logos/redis.svg" alt="Redis">
+                    </div>
+                    <span class="skill-tag">In-Memory DB</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Redis</h3>
+                    <p class="skill-card-desc">Caching Layer, Session Management, Speed</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Hands-on</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="backend">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/appscript.png" alt="Apps Script">
+                    </div>
+                    <span class="skill-tag">Automation</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Apps Script</h3>
+                    <p class="skill-card-desc">Enterprise Workflows, Sheets Integration</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Enterprise Project</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <!-- DevOps & Tools -->
+            <div class="skill-card-compact" data-category="devops">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="https://cdn.worldvectorlogo.com/logos/docker-4.svg" alt="Docker">
+                    </div>
+                    <span class="skill-tag">Containerization</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Docker</h3>
+                    <p class="skill-card-desc">Container Deployment, Docker Compose</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Hands-on</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="devops">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/git.png" alt="Git">
+                    </div>
+                    <span class="skill-tag">Version Control</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Git</h3>
+                    <p class="skill-card-desc">Branching Workflows, Merging, CLI</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Expert</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="devops">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/github.png" alt="GitHub">
+                    </div>
+                    <span class="skill-tag">Collaboration</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">GitHub</h3>
+                    <p class="skill-card-desc">Repositories, Pull Requests, Actions</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Expert</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="devops">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/keycloak.png" alt="Keycloak">
+                    </div>
+                    <span class="skill-tag">Authentication</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Keycloak</h3>
+                    <p class="skill-card-desc">SSO, IAM, Role-Based Access Control</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Thesis Project</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <!-- AI & APIs -->
+            <div class="skill-card-compact" data-category="ai">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/openai.png" alt="OpenAI">
+                    </div>
+                    <span class="skill-tag">AI Models</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">OpenAI API</h3>
+                    <p class="skill-card-desc">Contextual AI Tutoring, Prompting</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Integrated</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="ai">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/gemini.png" alt="Google Gemini">
+                    </div>
+                    <span class="skill-tag">LLM Services</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Gemini API</h3>
+                    <p class="skill-card-desc">Multi-modal AI Capabilities, Assistant Integration</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Integrated</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <div class="skill-card-compact" data-category="ai">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/Api.png" alt="REST APIs">
+                    </div>
+                    <span class="skill-tag">Architecture</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">RESTful APIs</h3>
+                    <p class="skill-card-desc">JSON Specs, Endpoint Security, Integration</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Core Stack</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span></div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="skill-card-compact" data-category="languages">
+                <div class="skill-card-top">
+                    <div class="skill-icon-wrapper">
+                        <img src="images/stack/java.png" alt="Java">
+                    </div>
+                    <span class="skill-tag">OOP Language</span>
+                </div>
+                <div class="skill-card-body">
+                    <h3 class="skill-card-name">Java</h3>
+                    <p class="skill-card-desc">Object-Oriented Programming, Data Structures</p>
+                </div>
+                <div class="skill-card-footer">
+                    <span class="skill-level"><i class='bx bx-check-circle'></i> Academic / Foundation</span>
+                    <div class="skill-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="Projects">
+    <div class="section-label">Selected Work</div>
+    <h2 class="section-title">Projects.</h2>
+    <div class="projects-grid">
+        <!-- Project 1: TISA - AI-Powered LMS (Thesis) -->
+        <div class="project-card" onclick="toggleProjectDetails(this)">
+            <div class="project-preview">
+                <span class="project-num">Thesis Project</span>
+                <h3 class="project-title">TISA - AI-Powered LMS</h3>
+                <p class="project-desc">University AI learning platform with context-aware tutoring, SSO authentication, and real-time academic management tools.</p>
+                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+            </div>
+            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
+                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">An AI-powered learning management system designed for College of Science Students at Bulacan State University, integrating advanced AI tutoring with robust academic management features.</p>
+                
+                <!-- Key Features -->
+                <ul style="margin: 12px 0 12px 20px; font-size: 0.9rem; color: #ccc;">
+                    <li>🤖 AI Tutor – Context-aware assistant with conversation continuity</li>
+                    <li>🔐 SSO Authentication – Keycloak integration with JWT & role-based access</li>
+                    <li>📅 Calendar Management – Classroom scheduling, holiday calendar, event management</li>
+                    <li>🌤️ Weather Integration – Real-time weather & 7-day forecast for Bulacan</li>
+                    <li>✅ Task Management – Create, prioritize, and track task completion</li>
+                    <li>📚 Learning Management – Course enrollment, lesson viewer, progress tracking</li>
+                    <li>🔔 Real-time Notifications – Bell icon with unread count & history</li>
+                    <li>🛠️ Admin Dashboard – Room, faculty, curriculum, user management</li>
+                </ul>
+                
+                <!-- Full Tech Stack -->
+                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">React 18 + TS</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Node.js + Express</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">PostgreSQL + Redis</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Keycloak SSO</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">OpenAI/Gemini</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Docker</span>
+                </div>
+                
+                <!-- Architecture Highlights -->
+                <details style="margin: 10px 0; font-size: 0.85rem; color: #aaa;">
+                    <summary style="cursor: pointer; font-weight: bold;">⚙️ System Architecture</summary>
+                    <ul style="margin: 8px 0 0 20px;">
+                        <li>Multi-provider AI service integration (OpenAI, Anthropic, Google Gemini)</li>
+                        <li>Redis caching layer for weather API (3-hour TTL, reduced latency)</li>
+                        <li>Dockerized microservices for consistent dev/prod parity</li>
+                        <li>Real-time notification system with unread count tracking</li>
+                    </ul>
+                </details>
+                
+                <div class="project-meta" style="margin: 8px 0; display: flex; gap: 12px; font-size: 0.7rem; color: #888;">
+                    <span>✅ Production Ready</span>
+                    <span>🐳 Dockerized</span>
+                    <span>🔐 SSO Enabled</span>
+                </div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
+                    <a href="#" class="project-link view-project" data-images="images/projects/t1.png images/projects/t2.png images/projects/t3.png images/projects/t4.png images/projects/t5.png images/projects/t6.png images/projects/t7.png">
+                        View Gallery <i class='bx bx-images'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: ListaGo - Task Manager (Personal) -->
+        <div class="project-card" onclick="toggleProjectDetails(this)">
+            <div class="project-preview">
+                <span class="project-num">Personal Project</span>
+                <h3 class="project-title">ListaGo - Task Manager</h3>
+                <p class="project-desc">Modern project management app with intuitive task organization, multiple views, and local storage persistence.</p>
+                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+            </div>
+            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
+                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">I designed and developed a comprehensive task management application that helps users organize their workflow through projects, set due dates, and track task completion with an elegant, intuitive interface.</p>
+                
+                <!-- Key Features -->
+                <ul style="margin: 12px 0 12px 20px; font-size: 0.9rem; color: #ccc;">
+                    <li>✅ Project Organization – Custom projects with color-coded icons</li>
+                    <li>✅ Multiple Views – Dashboard, today's tasks, upcoming, complete task list</li>
+                    <li>✅ Responsive Design – Slide-in sidebar for all devices</li>
+                    <li>✅ Modern UI/UX – Glassmorphism with smooth animations</li>
+                    <li>✅ Dashboard Analytics – Visual stats for total, pending & completed tasks</li>
+                </ul>
+                
+                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Vanilla JS (ES6+)</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">CSS3 + Glassmorphism</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">LocalStorage</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Mobile-First</span>
+                </div>
+                
+                <!-- Challenges Solved -->
+                <details style="margin: 10px 0; font-size: 0.85rem; color: #aaa;">
+                    <summary style="cursor: pointer; font-weight: bold;">🔧 Challenges Solved</summary>
+                    <ul style="margin: 8px 0 0 20px;">
+                        <li>Mobile slide-in sidebar across all modern browsers</li>
+                        <li>Unified modal system for delete confirmations</li>
+                        <li>Debouncing to prevent rapid UI performance issues</li>
+                    </ul>
+                </details>
+                
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
+                    <a href="https://lista-go.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                        View Live Site <i class='bx bx-link-external'></i>
+                    </a>
+                    <a href="#" class="project-link view-project" data-images="images/projects/td1.png images/projects/td2.png images/projects/td3.png images/projects/td4.png images/projects/td5.png images/projects/td6.png">
+                        View Gallery <i class='bx bx-images'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Payroll Automation (Intern) -->
+        <div class="project-card" onclick="toggleProjectDetails(this)">
+            <div class="project-preview">
+                <span class="project-num">Intern Project</span>
+                <h3 class="project-title">Payroll Automation</h3>
+                <p class="project-desc">Enterprise payroll processing system that automated calculations and streamlined HR workflows for 100+ employees.</p>
+                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+            </div>
+            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
+                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">An automation web app using Google Apps Script, JavaScript, Bootstrap, and REST APIs for seamless payroll processing that eliminated manual calculations and reduced errors.</p>
+                
+                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Google Apps Script</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">JavaScript</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Bootstrap</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">REST APIs</span>
+                </div>
+                
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
+                    <a href="#" class="project-link view-project" data-images="images/projects/p1.png images/projects/p2.png images/projects/p3.png images/projects/p4.png">
+                        View Gallery <i class='bx bx-images'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4: Just.3d - Interactive Website (Side Project) -->
+        <div class="project-card" onclick="toggleProjectDetails(this)">
+            <div class="project-preview">
+                <span class="project-num">Side Project</span>
+                <h3 class="project-title">Just.3d - Interactive Website</h3>
+                <p class="project-desc">Creative portfolio website featuring smooth 3D animations and modern interactive design elements.</p>
+                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+            </div>
+            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
+                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">A simple webpage built with HTML, CSS, and JavaScript featuring 3D visual elements and smooth interactive animations that create an engaging user experience.</p>
+                
+                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">HTML5</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">CSS3</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">JavaScript</span>
+                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">3D Animations</span>
+                </div>
+                
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
+                    <a href="https://just3dgal.netlify.app/?fbclid=IwY2xjawR7g_VleHRuA2FlbQIxMABicmlkETFqUkFNNjFNdE1IWXllR2wwc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHubHyptOgtYp2WKQW7KCQCsJo-b04ytRSjVG6F1rOAynfyRWooqbdvD0_eM8_aem_k0UOSTHJLN1pTUmIogKSKQ" class="project-link" target="_blank" rel="noopener noreferrer">
+                        View Live Site <i class='bx bx-link-external'></i>
+                    </a>
+                    <a href="#" class="project-link view-project" data-images="images/projects/j1.png images/projects/j2.png images/projects/j3.png images/projects/j4.png">
+                        View Gallery <i class='bx bx-images'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="#" class="footer-logo">Jeslhee<span>.</span></a>
+    <span class="footer-copy">© 2025 John Jeslhee M. Del Rosario</span>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="contact-modal">
+    <div class="contact-content">
+        <span class="close-modal"><i class='bx bx-x'></i></span>
+        <div class="modal-heading">
+            <div class="modal-icon"><i class='bx bx-chat'></i></div>
+            <div>
+                <p class="modal-kicker">Get in touch</p>
+                <h2>Let's <span>Talk.</span></h2>
+            </div>
+        </div>
+        <p class="modal-copy">Have a project in mind or just want to say hello? Drop a message and I'll get back to you within 24 hours.</p>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message <i class='bx bx-send'></i></button>
+        </form>
+        <div id="success-message" class="success-message">✓ Message sent successfully!</div>
+    </div>
+</div>
+
+<!-- EMAIL MODAL -->
+<div id="email-modal" class="contact-modal">
+    <div class="contact-content email-modal-card">
+        <span class="close-email-modal"><i class='bx bx-x'></i></span>
+        <div class="modal-heading">
+            <div class="modal-icon"><i class='bx bx-envelope'></i></div>
+            <div>
+                <p class="modal-kicker">Direct contact</p>
+                <h2>Send <span>Email.</span></h2>
+            </div>
+        </div>
+        <p class="modal-copy">Share a quick overview of your idea and I’ll reply as soon as I can.</p>
+        <form id="email-form" class="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" value="Portfolio Inquiry" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send Email <i class='bx bx-send'></i></button>
+        </form>
+        <div id="email-success-message" class="success-message">Email sent successfully!</div>
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">←</button>
+    <img src="" alt="Project Image" class="lightbox-image">
+    <button class="lightbox-next">→</button>
+    <span class="lightbox-counter"></span>
+</div>
+
+<script src="function.js"></script>
+<script>
+// Project card expand/collapse functionality
+function toggleProjectDetails(card) {
+    const details = card.querySelector('.project-details');
+    const hint = card.querySelector('.expand-hint i');
+    const isOpen = details.style.display === 'block';
+
+    document.querySelectorAll('.project-card').forEach(project => {
+        const projectDetails = project.querySelector('.project-details');
+        const projectHint = project.querySelector('.expand-hint i');
+
+        if (project === card) return;
+
+        projectDetails.style.display = 'none';
+        projectHint.classList.remove('bx-chevron-up');
+        projectHint.classList.add('bx-chevron-down');
+    });
+
+    if (isOpen) {
+        details.style.display = 'none';
+        hint.classList.remove('bx-chevron-up');
+        hint.classList.add('bx-chevron-down');
+    } else {
+        details.style.display = 'block';
+        hint.classList.remove('bx-chevron-down');
+        hint.classList.add('bx-chevron-up');
+    }
+}
+
+</script>
+</body>
+</html>

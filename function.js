@@ -5,7 +5,7 @@
     document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
     function animateRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
     animateRing();
-    document.querySelectorAll('a,button,.close-modal,.lightbox-prev,.lightbox-next,.hamburger').forEach(el => {
+    document.querySelectorAll('a,button,.close-modal,.lightbox-prev,.lightbox-next,.hamburger,.about-tab-btn,.pillar-card,.bento-item,.tech-pill,.skills-filter-btn,.skill-card-compact').forEach(el => {
         el.addEventListener('mouseenter', () => { cursor.classList.add('expanded'); ring.classList.add('expanded'); });
         el.addEventListener('mouseleave', () => { cursor.classList.remove('expanded'); ring.classList.remove('expanded'); });
     });
@@ -189,15 +189,15 @@ document.getElementById('email-form').addEventListener('submit', async e => {
     const heroMetrics = document.querySelector('.hero-metrics');
     if (heroMetrics) heroObserver.observe(heroMetrics);
 
-// Skill cell scroll animation
-    const observer = new IntersectionObserver(entries => {
+// Skill card scroll reveal animation
+    const skillObserver = new IntersectionObserver(entries => {
         entries.forEach((entry, i) => {
             if(entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                setTimeout(() => entry.target.classList.add('revealed'), i * 60);
             }
         });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.skill-cell').forEach(el => observer.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.skill-card-compact').forEach(el => skillObserver.observe(el));
 
     // Active nav
     const sections = document.querySelectorAll('section[id]');
@@ -208,3 +208,46 @@ document.getElementById('email-form').addEventListener('submit', async e => {
             a.classList.toggle('active', a.getAttribute('href') === '#'+current);
         });
     });
+
+    // ── About Section Tabs ──
+    const aboutTabBtns = document.querySelectorAll('.about-tab-btn');
+    const aboutTabContents = document.querySelectorAll('.about-tab-content');
+
+    aboutTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+            
+            aboutTabBtns.forEach(b => b.classList.remove('active'));
+            aboutTabContents.forEach(c => c.classList.remove('active'));
+            
+            btn.classList.add('active');
+            const content = document.getElementById(targetTab);
+            if (content) {
+                content.classList.add('active');
+            }
+        });
+    });
+
+    // ── Skills Category Filter ──
+    const filterBtns = document.querySelectorAll('.skills-filter-btn');
+    const skillCards = document.querySelectorAll('.skill-card-compact');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            skillCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || category.includes(filter)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+

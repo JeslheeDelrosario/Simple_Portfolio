@@ -1,0 +1,53 @@
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="contact-modal">
+    <div class="contact-content">
+        <span class="close-modal"><i class='bx bx-x'></i></span>
+        <div class="modal-heading">
+            <div class="modal-icon"><i class='bx bx-chat'></i></div>
+            <div>
+                <p class="modal-kicker">Get in touch</p>
+                <h2>Let's <span>Talk.</span></h2>
+            </div>
+        </div>
+        <p class="modal-copy">Have a project in mind or just want to say hello? Drop a message and I'll get back to you within 24 hours.</p>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message <i class='bx bx-send'></i></button>
+        </form>
+        <div id="success-message" class="success-message">✓ Message sent successfully!</div>
+    </div>
+</div>
+
+<!-- EMAIL MODAL -->
+<div id="email-modal" class="contact-modal">
+    <div class="contact-content email-modal-card">
+        <span class="close-email-modal"><i class='bx bx-x'></i></span>
+        <div class="modal-heading">
+            <div class="modal-icon"><i class='bx bx-envelope'></i></div>
+            <div>
+                <p class="modal-kicker">Direct contact</p>
+                <h2>Send <span>Email.</span></h2>
+            </div>
+        </div>
+        <p class="modal-copy">Share a quick overview of your idea and I’ll reply as soon as I can.</p>
+        <form id="email-form" class="contact-form" action="https://formspree.io/f/xdkdrnyv" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" value="Portfolio Inquiry" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Email <i class='bx bx-send'></i></button>
+        </form>
+        <div id="email-success-message" class="success-message">Email sent successfully!</div>
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">←</button>
+    <img src="" alt="Project Image" class="lightbox-image">
+    <button class="lightbox-next">→</button>
+    <span class="lightbox-counter"></span>
+</div>
