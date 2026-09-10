@@ -1,264 +1,141 @@
-# 🚀 John Jeslhee's Portfolio Website
+# Portfolio Website
 
-A modern, sleek, and interactive personal portfolio website showcasing my journey as a Computer Science student and aspiring web developer. Built with a focus on clean design, smooth animations, and responsive user experience.
+A responsive personal portfolio website built with plain HTML, CSS, and JavaScript. The site uses a modular section-based layout, a dark visual system with lime accents, and interactive project and skills browsing.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Website Status](https://img.shields.io/badge/Website-Live-brightgreen)](https://jeslhee.xyz)
-[![Made with HTML/CSS/JS](https://img.shields.io/badge/Made%20with-HTML%2FCSS%2FJS-orange)]()
+This README intentionally does not include the portfolio owner's name, email address, social profiles, personal domain, or other identifying contact details. Review the content and assets in the site before sharing the repository publicly.
 
----
+## Features
 
-## ✨ Features
+### Visual design
 
-### 🎨 Design Highlights
-- **Dark theme with lime green accents** - Modern aesthetic with high contrast
-- **Custom cursor animations** - Smooth interactive cursor that expands on hover
-- **Glass-morphism effects** - Backdrop blur and frosted glass elements
-- **Responsive layout** - Works perfectly on mobile, tablet, and desktop
-- **Noise overlay texture** - Subtle grain effect for depth
-- **Smooth scroll animations** - Fade-up and slide-in transitions
+- Responsive layouts for desktop, tablet, and mobile screens
+- Dark theme with lime accent colors
+- Custom cursor and hover states on larger screens
+- Glass-style surfaces, noise textures, decorative shapes, and animated transitions
+- Google Fonts typography using Syne and DM Sans
+- BoxIcons for interface and social icons
 
-### 📱 Sections
-| Section | Description |
-|---------|-------------|
-| **Home** | Hero section with animated profile, social links, and CTA buttons |
-| **About** | Personal background, education, and professional journey |
-| **Skills** | Comprehensive tech stack organized by Frontend, Backend, and Tools |
-| **Projects** | Featured projects with details, tech stacks, and image lightbox |
-| **Contact** | Modal contact form powered by Formspree for easy messaging |
+### Home section
 
-### 🎯 Interactive Features
-- **Project Lightbox** - Click "View Project" to browse screenshot galleries
-- **Contact Modal** - Elegant popup form for direct messaging
-- **Mobile Navigation** - Hamburger menu for responsive mobile experience
-- **Social Integration** - LinkedIn, GitHub, and email links in hero section
-- **Smooth scrolling** - Anchor links with scroll-behavior: smooth
+- Artistic hero layout with decorative shapes, stars, scribbles, and a profile image
+- Availability badge, calls to action, and social link controls
+- Animated metrics for projects, technologies, and years of coding
+- Particle canvas animation with connected particles
+- Scrolling technology marquee
+- Scroll indicator and responsive navigation
 
----
+### Interactive sections
 
-## 🛠️ Tech Stack
+- About section with tabbed content
+- Skills section with category filters for front-end, back-end, DevOps, AI, APIs, and languages
+- Projects section with filters for thesis, personal, and professional work
+- Expandable project cards with technology details and feature lists
+- Project screenshot lightbox with previous/next controls and image counter
+- Contact and email modals with asynchronous form submission
+- Mobile navigation menu and active navigation state while scrolling
 
-### Core Technologies
-| Technology | Purpose |
-|------------|---------|
-| **HTML5** | Semantic markup and structure |
-| **CSS3** | Modern styling with CSS Grid & Flexbox |
-| **JavaScript (ES6+)** | Interactive functionality and DOM manipulation |
-| **Google Fonts** | Syne (display) + DM Sans (body) typography |
-| **BoxIcons** | Icon library for socials and UI elements |
+## Featured projects
 
-### Full Stack Experience showcased
-#### Frontend
-- React 18 + TypeScript
-- Tailwind CSS
-- Vite
-- Radix UI
+- **TISA - AI-Powered LMS**: A university learning platform with AI tutoring, Keycloak SSO, academic scheduling, task management, and administration tools.
+- **ListaGo - Task Manager**: A responsive task management app with project organization, multiple views, dashboard statistics, and LocalStorage persistence.
+- **Payroll Automation**: An internship project focused on automating payroll workflows with web technologies and external APIs.
+- **Just.3d - Interactive Website**: A personal experiment using 3D visual elements and interactive web animations.
 
-#### Backend
-- Node.js + Express
-- PostgreSQL + Redis
-- Google Apps Script
-- Prisma ORM
+## Technology
 
-#### DevOps & Tools
-- Docker & Docker Compose
-- Keycloak (SSO)
-- Git & GitHub
-- OpenAI/Anthropic/Gemini APIs
+| Technology | Use |
+| --- | --- |
+| HTML5 | Page structure and reusable section partials |
+| CSS3 | Layout, responsive design, animations, effects, and theming |
+| JavaScript | Section loading, navigation, filters, modals, lightbox, particles, and counters |
+| Google Fonts | Syne and DM Sans |
+| BoxIcons | Icons used throughout the interface |
+| Formspree | Optional form submission service configured in the modal markup |
 
----
+The portfolio content showcases technologies including React, TypeScript, JavaScript, Node.js, Express, PostgreSQL, Redis, Docker, Keycloak, OpenAI, Gemini, Git, HTML, CSS, and Tailwind CSS. These are displayed as portfolio skills and project technologies; they are not all dependencies of this static site.
 
-## 📂 Project Structure
+## Project structure
 
-```
+```text
 MY PAGE/
-├── index.html              # Main HTML file
-├── Main.css               # All styles and animations
-├── function.js            # JavaScript interactivity
-├── LICENSE                # MIT License
-├── README.md              # This file!
-└── Images/
-    ├── favi/              # Favicons and PWA icons
-    ├── me/                # Profile photos
-    ├── stack/             # Technology logos
-    └── projects/          # Project screenshots
+├── index.html              # Page shell and dynamic section loader
+├── index.old.html          # Previous monolithic page, kept for reference
+├── function.js             # Site interactions and animations
+├── Main.css                # Main stylesheet
+├── sections/
+│   ├── navbar.html         # Site navigation
+│   ├── hero.html           # Home section and hero content
+│   ├── about.html          # About section
+│   ├── skills.html         # Skills and technology filters
+│   ├── projects.html       # Project cards and project filters
+│   ├── footer.html         # Footer content
+│   └── modals.html         # Contact, email, and lightbox markup
+├── Images/
+│   ├── favi/               # Favicon and web app icons
+│   ├── me/                 # Profile images
+│   ├── stack/              # Technology icons
+│   └── projects/           # Project screenshots
+├── LICENSE
+├── TODO.md
+└── README.md
 ```
 
-### Key Files Explained
+## How it works
 
-#### `index.html` [c:\Users\John Jeslhee\Projects\MY PAGE\index.html](file:///c:/Users/John%20Jeslhee/Projects/MY%20PAGE/index.html)
-- Semantic HTML5 structure
-- All sections properly organized
-- Formspree integration for contact form
-- External CDNs for fonts and icons
-- Lightbox and modal markup
+`index.html` provides the page shell and loads the HTML files listed in `sectionFiles` from the `sections/` directory. After all sections are inserted into the page, it loads `function.js`, which attaches the event handlers and starts the interactive features.
 
-#### `Main.css` [c:\Users\John Jeslhee\Projects\MY PAGE\Main.css](file:///c:/Users/John%20Jeslhee/Projects/MY%20PAGE/Main.css)
-- CSS custom properties for theming
-- CSS Grid and Flexbox layouts
-- Custom cursor animations
-- Responsive media queries
-- Keyframe animations for fade effects
-- Noise overlay and glass-morphism effects
+The page must be served through a local web server because the browser blocks the section `fetch()` requests when the page is opened directly with a `file://` URL.
 
-#### `function.js`
-- Custom cursor tracking
-- Mobile hamburger menu
-- Lightbox gallery functionality
-- Contact modal management
-- Form submission handling
-- Scroll animations
+## Run locally
 
----
+Prerequisites:
 
-## 🚀 Getting Started
+- A modern web browser
+- A local static web server
 
-### Prerequisites
-- Any modern web browser (Chrome, Firefox, Safari, Edge)
-- Basic web server or just open `index.html` directly
+From the project directory, start one of these servers:
 
-### Local Development
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/JeslheeDelrosario/portfolio.git
-   cd portfolio
-   ```
+```bash
+# Python
+python -m http.server 8000
 
-2. **Open in browser**
-   - Simply open `index.html` in your browser, or
-   - Use a local server:
-     ```bash
-     # Using Python
-     python -m http.server 8000
-     
-     # Using Node.js
-     npx serve
-     
-     # Using PHP
-     php -S localhost:8000
-     ```
+# Node.js
+npx serve
 
-3. **Visit** `http://localhost:8000` in your browser
-
-### Customization Guide
-1. **Update personal info** - Edit `index.html` to change name, bio, education
-2. **Add projects** - Add new project cards in the Projects section
-3. **Modify colors** - Update CSS variables in `:root` in Main.css
-4. **Change images** - Replace images in the Images/ directory
-5. **Update contact form** - Replace Formspree endpoint with your own
-
----
-
-## 📸 Featured Projects
-
-### 🎮 Just.3d
-A simple webpage built with HTML, CSS, and JavaScript featuring 3D visual elements and smooth interactive animations.
-
-### 💼 Payroll Management System (Internship)
-An automation web app using Google Apps Script, JavaScript, Bootstrap, and REST APIs for seamless payroll processing.
-
-### 🤖 TISA - Towards Intelligent Student Assistance (Thesis)
-An AI-powered learning management system with:
-- AI Tutor with context-aware conversations
-- Keycloak SSO authentication
-- Calendar & task management
-- Weather integration
-- Admin dashboard
-
-### ✅ ListaGo - Modern To-Do List
-Comprehensive task management app with:
-- Project organization
-- Multiple views (dashboard, today, upcoming)
-- LocalStorage persistence
-- Glassmorphism UI design
-
----
-
-## 🎨 Design System
-
-### Color Palette
-```css
---bg: #0a0a0a;           /* Main background */
---surface: #111111;      /* Card surfaces */
---border: #1e1e1e;       /* Border color */
---text: #f0ece4;          /* Primary text */
---muted: #6b6760;         /* Secondary text */
---accent: #c8f542;        /* Lime green accent */
+# PHP
+php -S localhost:8000
 ```
 
-### Typography
-- **Display Font**: Syne (Bold weights for headings)
-- **Body Font**: DM Sans (Light weights for content)
-- **Letter spacing**: Modern typographic scaling with clamp() for responsiveness
+Then open `http://localhost:8000` in a browser.
 
----
+## Customization
 
-## 📱 Responsive Breakpoints
+1. Edit the content in `sections/`.
+2. Update colors, layout, and responsive rules in `Main.css`.
+3. Add or replace images in `Images/`.
+4. Update the `sectionFiles` array in `index.html` when adding a new section.
+5. Update the form action in `sections/modals.html` if a Formspree endpoint is used.
+6. Replace personal links, text, and images with your own values before publishing.
 
-| Breakpoint | Devices | Adjustments |
-|------------|---------|-------------|
-| `> 900px` | Desktop | Full layout, hero panel right-aligned |
-| `600px - 900px` | Tablet | Hero panel stacked, grid adjusts |
-| `< 600px` | Mobile | All sections stacked, hamburger menu |
+## Privacy checklist before sharing
 
----
+- Remove or replace names, email addresses, phone numbers, and physical locations.
+- Review social links and form endpoints in `sections/hero.html` and `sections/modals.html`.
+- Check image metadata and filenames for identifying information.
+- Review profile photos and project screenshots before publishing them.
+- Search the repository for personal domains, usernames, and email addresses.
+- Remove unused archives or copies that may contain older personal information.
 
-## 🔧 Browser Support
+## Browser support
 
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile Safari (iOS)
-- ✅ Chrome Mobile (Android)
+The site targets current versions of Chrome, Firefox, Safari, and Edge, including modern mobile browsers. JavaScript and network access to the local server are required for the modular sections and interactive features.
 
----
+## License
 
-## 📬 Contact Form Setup
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-The contact form uses [Formspree](https://formspree.io/) for handling submissions. To use it:
-1. Create an account at Formspree.io
-2. Create a new form
-3. Replace the `action` attribute in `index.html` with your Formspree endpoint
-4. Start receiving messages!
+## Credits
 
-```html
-<form id="contact-form" action="https://formspree.io/f/your-form-id" method="post">
-```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-Copyright (c) 2026 Jeslhee Del Rosario
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files...
-```
-
----
-
-## 🔗 Links
-
-- **GitHub**: [@JeslheeDelrosario](https://github.com/JeslheeDelrosario)
-- **LinkedIn**: [John Jeslhee Del Rosario](https://www.linkedin.com/in/john-jeslheedelrosario/)
-- **Email**: delrosariojohnjeslhee@gmail.com
-
----
-
-## 🙏 Acknowledgments
-
-- Fonts from [Google Fonts](https://fonts.google.com/)
-- Icons from [BoxIcons](https://boxicons.com/)
-- Form handling by [Formspree](https://formspree.io/)
-- Inspiration from modern portfolio designs across the web
-
----
-
-<p align="center">
-  Built with 💚 by John Jeslhee M. Del Rosario
-</p>
+- Fonts: [Google Fonts](https://fonts.google.com/)
+- Icons: [BoxIcons](https://boxicons.com/)
+- Form handling: [Formspree](https://formspree.io/)

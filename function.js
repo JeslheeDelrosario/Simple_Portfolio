@@ -189,6 +189,70 @@ document.getElementById('email-form').addEventListener('submit', async e => {
     const heroMetrics = document.querySelector('.hero-metrics');
     if (heroMetrics) heroObserver.observe(heroMetrics);
 
+// Project cards - toggle details expansion
+    function toggleProjectDetails(card) {
+        const details = card.querySelector('.project-details');
+        const hint = card.querySelector('.expand-hint i');
+        
+        if (details.style.display === 'none') {
+            details.style.display = 'block';
+            hint.classList.remove('bx-chevron-down');
+            hint.classList.add('bx-chevron-up');
+        } else {
+            details.style.display = 'none';
+            hint.classList.remove('bx-chevron-up');
+            hint.classList.add('bx-chevron-down');
+        }
+    }
+
+    // Project cards - filter functionality
+    const filterButtons = document.querySelectorAll('.projects-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const filter = button.getAttribute('data-filter');
+            
+            // Filter cards
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                if (filter === 'all' || (categories && categories.includes(filter))) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // Add project cards to cursor hover effects
+    document.querySelectorAll('.project-card').forEach(el => {
+        el.addEventListener('mouseenter', () => { 
+            if (cursor && ring) {
+                cursor.classList.add('expanded'); 
+                ring.classList.add('expanded'); 
+            }
+        });
+        el.addEventListener('mouseleave', () => { 
+            if (cursor && ring) {
+                cursor.classList.remove('expanded'); 
+                ring.classList.remove('expanded'); 
+            }
+        });
+    });
+
 // Skill card scroll reveal animation
     const skillObserver = new IntersectionObserver(entries => {
         entries.forEach((entry, i) => {
@@ -249,5 +313,3 @@ document.getElementById('email-form').addEventListener('submit', async e => {
             });
         });
     });
-
-

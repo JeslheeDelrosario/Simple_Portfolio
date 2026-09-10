@@ -1,166 +1,261 @@
 <!-- PROJECTS -->
 <section id="Projects">
-    <div class="section-label">Selected Work</div>
-    <h2 class="section-title">Projects.</h2>
+    <div class="projects-section-header">
+        <div>
+            <div class="section-label">Selected Work</div>
+            <h2 class="section-title">Featured Projects<span class="accent">.</span></h2>
+        </div>
+        <p class="projects-subtitle">A curated collection of projects that showcase my expertise in building modern, scalable applications. Each project represents unique challenges and innovative solutions.</p>
+    </div>
+
+    <div class="projects-filter-bar">
+        <button class="projects-filter-btn active" data-filter="all">All Projects</button>
+        <button class="projects-filter-btn" data-filter="thesis">Thesis</button>
+        <button class="projects-filter-btn" data-filter="personal">Personal</button>
+        <button class="projects-filter-btn" data-filter="professional">Professional</button>
+    </div>
+
     <div class="projects-grid">
-        <!-- Project 1: TISA - AI-Powered LMS (Thesis) -->
-        <div class="project-card" onclick="toggleProjectDetails(this)">
-            <div class="project-preview">
-                <span class="project-num">Thesis Project</span>
-                <h3 class="project-title">TISA - AI-Powered LMS</h3>
-                <p class="project-desc">University AI learning platform with context-aware tutoring, SSO authentication, and real-time academic management tools.</p>
-                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+
+        <!-- TISA -->
+        <div class="project-card featured" data-category="thesis" onclick="toggleProjectDetails(this)">
+            <div class="project-thumbnail">
+                <img src="images/projects/t1.png" alt="TISA AI-Powered LMS" class="project-image">
+                <div class="thumbnail-overlay"></div>
+                <span class="project-badge thesis-badge">Thesis Project</span>
             </div>
-            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
-                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">An AI-powered learning management system designed for College of Science Students at Bulacan State University, integrating advanced AI tutoring with robust academic management features.</p>
-                
-                <!-- Key Features -->
-                <ul style="margin: 12px 0 12px 20px; font-size: 0.9rem; color: #ccc;">
-                    <li>🤖 AI Tutor – Context-aware assistant with conversation continuity</li>
-                    <li>🔐 SSO Authentication – Keycloak integration with JWT & role-based access</li>
-                    <li>📅 Calendar Management – Classroom scheduling, holiday calendar, event management</li>
-                    <li>🌤️ Weather Integration – Real-time weather & 7-day forecast for Bulacan</li>
-                    <li>✅ Task Management – Create, prioritize, and track task completion</li>
-                    <li>📚 Learning Management – Course enrollment, lesson viewer, progress tracking</li>
-                    <li>🔔 Real-time Notifications – Bell icon with unread count & history</li>
-                    <li>🛠️ Admin Dashboard – Room, faculty, curriculum, user management</li>
-                </ul>
-                
-                <!-- Full Tech Stack -->
-                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">React 18 + TS</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Node.js + Express</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">PostgreSQL + Redis</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Keycloak SSO</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">OpenAI/Gemini</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Docker</span>
+            <div class="project-preview">
+                <div class="project-header">
+                    <h3>TISA — AI-Powered LMS</h3>
+                    <button class="expand-btn" aria-label="Expand project details">
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
                 </div>
-                
-                <!-- Architecture Highlights -->
-                <details style="margin: 10px 0; font-size: 0.85rem; color: #aaa;">
-                    <summary style="cursor: pointer; font-weight: bold;">⚙️ System Architecture</summary>
-                    <ul style="margin: 8px 0 0 20px;">
-                        <li>Multi-provider AI service integration (OpenAI, Anthropic, Google Gemini)</li>
-                        <li>Redis caching layer for weather API (3-hour TTL, reduced latency)</li>
-                        <li>Dockerized microservices for consistent dev/prod parity</li>
-                        <li>Real-time notification system with unread count tracking</li>
-                    </ul>
-                </details>
-                
-                <div class="project-meta" style="margin: 8px 0; display: flex; gap: 12px; font-size: 0.7rem; color: #888;">
-                    <span>✅ Production Ready</span>
-                    <span>🐳 Dockerized</span>
-                    <span>🔐 SSO Enabled</span>
+                <p class="project-desc">University AI learning platform with context-aware tutoring, Keycloak SSO, and real-time academic management tools built for Bulacan State University.</p>
+                <div class="project-tech-mini">
+                    <span>React 18</span>
+                    <span>Node.js</span>
+                    <span>PostgreSQL</span>
+                    <span>Redis</span>
+                    <span>Docker</span>
+                    <span>OpenAI</span>
                 </div>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
-                    <a href="#" class="project-link view-project" data-images="images/projects/t1.png images/projects/t2.png images/projects/t3.png images/projects/t4.png images/projects/t5.png images/projects/t6.png images/projects/t7.png">
-                        View Gallery <i class='bx bx-images'></i>
-                    </a>
+            </div>
+            <div class="project-details">
+                <div class="details-content">
+                    <p class="details-description">An AI-powered learning management system for College of Science Students at Bulacan State University, integrating advanced AI tutoring with robust academic management features.</p>
+                    <div class="details-section">
+                        <h4>Key Features</h4>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">🤖</span> AI Tutor with conversation continuity</li>
+                            <li><span class="feature-icon">🔐</span> Keycloak SSO + JWT role-based access</li>
+                            <li><span class="feature-icon">📅</span> Calendar & classroom scheduling</li>
+                            <li><span class="feature-icon">🌤️</span> Real-time weather integration</li>
+                            <li><span class="feature-icon">✅</span> Task management & tracking</li>
+                            <li><span class="feature-icon">🛠️</span> Full admin dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="details-section">
+                        <h4>Tech Stack</h4>
+                        <div class="tech-stack-full">
+                            <span class="tech-tag frontend">React 18 + TS</span>
+                            <span class="tech-tag backend">Node.js + Express</span>
+                            <span class="tech-tag database">PostgreSQL + Redis</span>
+                            <span class="tech-tag devops">Keycloak SSO</span>
+                            <span class="tech-tag ai">OpenAI / Gemini</span>
+                            <span class="tech-tag devops">Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-meta-row">
+                        <div class="status-badges">
+                            <span class="status-badge production">✅ Production Ready</span>
+                            <span class="status-badge docker">🐳 Dockerized</span>
+                            <span class="status-badge security">🔐 SSO Enabled</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="project-link primary view-project" data-images="images/projects/t1.png images/projects/t2.png images/projects/t3.png images/projects/t4.png images/projects/t5.png images/projects/t6.png images/projects/t7.png" onclick="event.stopPropagation()">
+                                Gallery <i class='bx bx-images'></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Project 2: ListaGo - Task Manager (Personal) -->
-        <div class="project-card" onclick="toggleProjectDetails(this)">
-            <div class="project-preview">
-                <span class="project-num">Personal Project</span>
-                <h3 class="project-title">ListaGo - Task Manager</h3>
-                <p class="project-desc">Modern project management app with intuitive task organization, multiple views, and local storage persistence.</p>
-                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+        <!-- ListaGo -->
+        <div class="project-card" data-category="personal" onclick="toggleProjectDetails(this)">
+            <div class="project-thumbnail">
+                <img src="images/projects/td1.png" alt="ListaGo Task Manager" class="project-image">
+                <div class="thumbnail-overlay"></div>
+                <span class="project-badge personal-badge">Personal Project</span>
             </div>
-            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
-                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">I designed and developed a comprehensive task management application that helps users organize their workflow through projects, set due dates, and track task completion with an elegant, intuitive interface.</p>
-                
-                <!-- Key Features -->
-                <ul style="margin: 12px 0 12px 20px; font-size: 0.9rem; color: #ccc;">
-                    <li>✅ Project Organization – Custom projects with color-coded icons</li>
-                    <li>✅ Multiple Views – Dashboard, today's tasks, upcoming, complete task list</li>
-                    <li>✅ Responsive Design – Slide-in sidebar for all devices</li>
-                    <li>✅ Modern UI/UX – Glassmorphism with smooth animations</li>
-                    <li>✅ Dashboard Analytics – Visual stats for total, pending & completed tasks</li>
-                </ul>
-                
-                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Vanilla JS (ES6+)</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">CSS3 + Glassmorphism</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">LocalStorage</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Mobile-First</span>
+            <div class="project-preview">
+                <div class="project-header">
+                    <h3>ListaGo — Task Manager</h3>
+                    <button class="expand-btn" aria-label="Expand project details">
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
                 </div>
-                
-                <!-- Challenges Solved -->
-                <details style="margin: 10px 0; font-size: 0.85rem; color: #aaa;">
-                    <summary style="cursor: pointer; font-weight: bold;">🔧 Challenges Solved</summary>
-                    <ul style="margin: 8px 0 0 20px;">
-                        <li>Mobile slide-in sidebar across all modern browsers</li>
-                        <li>Unified modal system for delete confirmations</li>
-                        <li>Debouncing to prevent rapid UI performance issues</li>
-                    </ul>
-                </details>
-                
-                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
-                    <a href="https://lista-go.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-                        View Live Site <i class='bx bx-link-external'></i>
-                    </a>
-                    <a href="#" class="project-link view-project" data-images="images/projects/td1.png images/projects/td2.png images/projects/td3.png images/projects/td4.png images/projects/td5.png images/projects/td6.png">
-                        View Gallery <i class='bx bx-images'></i>
-                    </a>
+                <p class="project-desc">Modern task management app with project organization, multiple views, and glassmorphism UI backed by LocalStorage.</p>
+                <div class="project-tech-mini">
+                    <span>Vanilla JS</span>
+                    <span>CSS3</span>
+                    <span>LocalStorage</span>
+                </div>
+            </div>
+            <div class="project-details">
+                <div class="details-content">
+                    <p class="details-description">A comprehensive task management app with project organization, multiple views (dashboard, today, upcoming), and a clean glassmorphism interface.</p>
+                    <div class="details-section">
+                        <h4>Key Features</h4>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✅</span> Custom projects with color-coded icons</li>
+                            <li><span class="feature-icon">📊</span> Dashboard analytics & visual stats</li>
+                            <li><span class="feature-icon">📱</span> Responsive slide-in sidebar</li>
+                            <li><span class="feature-icon">💾</span> LocalStorage persistence</li>
+                        </ul>
+                    </div>
+                    <div class="details-section">
+                        <h4>Tech Stack</h4>
+                        <div class="tech-stack-full">
+                            <span class="tech-tag frontend">Vanilla JS (ES6+)</span>
+                            <span class="tech-tag frontend">CSS3 + Glassmorphism</span>
+                            <span class="tech-tag tool">LocalStorage</span>
+                        </div>
+                    </div>
+                    <div class="project-meta-row">
+                        <div class="status-badges">
+                            <span class="status-badge live">🚀 Live Deployed</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://lista-go.vercel.app/" class="project-link primary" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                                Live Site <i class='bx bx-link-external'></i>
+                            </a>
+                            <a href="#" class="project-link secondary view-project" data-images="images/projects/td1.png images/projects/td2.png images/projects/td3.png images/projects/td4.png images/projects/td5.png images/projects/td6.png" onclick="event.stopPropagation()">
+                                Gallery <i class='bx bx-images'></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Project 3: Payroll Automation (Intern) -->
-        <div class="project-card" onclick="toggleProjectDetails(this)">
-            <div class="project-preview">
-                <span class="project-num">Intern Project</span>
-                <h3 class="project-title">Payroll Automation</h3>
-                <p class="project-desc">Enterprise payroll processing system that automated calculations and streamlined HR workflows for 100+ employees.</p>
-                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+        <!-- Payroll -->
+        <div class="project-card" data-category="professional" onclick="toggleProjectDetails(this)">
+            <div class="project-thumbnail">
+                <img src="images/projects/p1.png" alt="Payroll Automation System" class="project-image">
+                <div class="thumbnail-overlay"></div>
+                <span class="project-badge professional-badge">Intern Project</span>
             </div>
-            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
-                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">An automation web app using Google Apps Script, JavaScript, Bootstrap, and REST APIs for seamless payroll processing that eliminated manual calculations and reduced errors.</p>
-                
-                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Google Apps Script</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">JavaScript</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">Bootstrap</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">REST APIs</span>
+            <div class="project-preview">
+                <div class="project-header">
+                    <h3>Payroll Automation</h3>
+                    <button class="expand-btn" aria-label="Expand project details">
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
                 </div>
-                
-                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
-                    <a href="#" class="project-link view-project" data-images="images/projects/p1.png images/projects/p2.png images/projects/p3.png images/projects/p4.png">
-                        View Gallery <i class='bx bx-images'></i>
-                    </a>
+                <p class="project-desc">Enterprise payroll system that automated calculations for 100+ employees, cutting processing time from 5 days to 4 hours.</p>
+                <div class="project-tech-mini">
+                    <span>Apps Script</span>
+                    <span>Bootstrap</span>
+                    <span>REST APIs</span>
+                </div>
+            </div>
+            <div class="project-details">
+                <div class="details-content">
+                    <p class="details-description">An enterprise-grade automation web app that eliminated manual calculations and streamlined HR workflows for an organization with 100+ employees.</p>
+                    <div class="details-section">
+                        <h4>Key Features</h4>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">💸</span> Real-time salary & tax calculations</li>
+                            <li><span class="feature-icon">📊</span> PDF payslip generation</li>
+                            <li><span class="feature-icon">🔗</span> Google Workspace sync</li>
+                            <li><span class="feature-icon">📈</span> Full audit logs</li>
+                        </ul>
+                    </div>
+                    <div class="details-section">
+                        <h4>Tech Stack</h4>
+                        <div class="tech-stack-full">
+                            <span class="tech-tag tool">Google Apps Script</span>
+                            <span class="tech-tag frontend">JavaScript ES6+</span>
+                            <span class="tech-tag frontend">Bootstrap 5</span>
+                            <span class="tech-tag backend">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="project-meta-row">
+                        <div class="status-badges">
+                            <span class="status-badge production">🏢 In Production</span>
+                            <span class="status-badge enterprise">🏭 Enterprise</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="project-link primary view-project" data-images="images/projects/p1.png images/projects/p2.png images/projects/p3.png images/projects/p4.png" onclick="event.stopPropagation()">
+                                Gallery <i class='bx bx-images'></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Project 4: Just.3d - Interactive Website (Side Project) -->
-        <div class="project-card" onclick="toggleProjectDetails(this)">
-            <div class="project-preview">
-                <span class="project-num">Side Project</span>
-                <h3 class="project-title">Just.3d - Interactive Website</h3>
-                <p class="project-desc">Creative portfolio website featuring smooth 3D animations and modern interactive design elements.</p>
-                <span class="expand-hint">Click to expand <i class='bx bx-chevron-down'></i></span>
+        <!-- Just.3d -->
+        <div class="project-card" data-category="personal" onclick="toggleProjectDetails(this)">
+            <div class="project-thumbnail">
+                <img src="images/projects/j1.png" alt="Just.3d Interactive Website" class="project-image">
+                <div class="thumbnail-overlay"></div>
+                <span class="project-badge personal-badge">Side Project</span>
             </div>
-            <div class="project-details" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #333;">
-                <p style="margin: 0 0 12px 0; font-size: 0.9rem; color: #ccc;">A simple webpage built with HTML, CSS, and JavaScript featuring 3D visual elements and smooth interactive animations that create an engaging user experience.</p>
-                
-                <div class="project-tech" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 6px;">
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">HTML5</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">CSS3</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">JavaScript</span>
-                    <span style="background: #2d2d2d; padding: 3px 8px; border-radius: 15px; font-size: 0.7rem;">3D Animations</span>
+            <div class="project-preview">
+                <div class="project-header">
+                    <h3>Just.3d — Interactive Website</h3>
+                    <button class="expand-btn" aria-label="Expand project details">
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
                 </div>
-                
-                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
-                    <a href="https://just3dgal.netlify.app/?fbclid=IwY2xjawR7g_VleHRuA2FlbQIxMABicmlkETFqUkFNNjFNdE1IWXllR2wwc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHubHyptOgtYp2WKQW7KCQCsJo-b04ytRSjVG6F1rOAynfyRWooqbdvD0_eM8_aem_k0UOSTHJLN1pTUmIogKSKQ" class="project-link" target="_blank" rel="noopener noreferrer">
-                        View Live Site <i class='bx bx-link-external'></i>
-                    </a>
-                    <a href="#" class="project-link view-project" data-images="images/projects/j1.png images/projects/j2.png images/projects/j3.png images/projects/j4.png">
-                        View Gallery <i class='bx bx-images'></i>
-                    </a>
+                <p class="project-desc">Creative website featuring smooth 3D animations, interactive design elements, and modern visual effects.</p>
+                <div class="project-tech-mini">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>3D Animations</span>
+                </div>
+            </div>
+            <div class="project-details">
+                <div class="details-content">
+                    <p class="details-description">A creative experimentation project pushing the boundaries of web interactivity with immersive 3D elements, fluid animations, and modern visual design.</p>
+                    <div class="details-section">
+                        <h4>Key Features</h4>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">🎮</span> Real-time 3D interactions</li>
+                            <li><span class="feature-icon">⚡</span> Smooth scroll-triggered transitions</li>
+                            <li><span class="feature-icon">🎨</span> Glassmorphism + neumorphic design</li>
+                            <li><span class="feature-icon">📱</span> Fully responsive 3D elements</li>
+                        </ul>
+                    </div>
+                    <div class="details-section">
+                        <h4>Tech Stack</h4>
+                        <div class="tech-stack-full">
+                            <span class="tech-tag frontend">HTML5 / CSS3</span>
+                            <span class="tech-tag frontend">JavaScript ES6+</span>
+                            <span class="tech-tag tool">3D Animations</span>
+                        </div>
+                    </div>
+                    <div class="project-meta-row">
+                        <div class="status-badges">
+                            <span class="status-badge live">🚀 Live Deployed</span>
+                            <span class="status-badge experimental">🧪 Experimental</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://just3dgal.netlify.app/" class="project-link primary" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                                Live Site <i class='bx bx-link-external'></i>
+                            </a>
+                            <a href="#" class="project-link secondary view-project" data-images="images/projects/j1.png images/projects/j2.png images/projects/j3.png images/projects/j4.png" onclick="event.stopPropagation()">
+                                Gallery <i class='bx bx-images'></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
