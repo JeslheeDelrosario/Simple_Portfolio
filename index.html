@@ -45,12 +45,14 @@
     async function loadSections() {
         const shell = document.getElementById('page-shell');
 
-        for (const section of sectionFiles) {
-            const html = await fetchSection(section);
+        const htmlParts = await Promise.all(sectionFiles.map(fetchSection));
+        const fragment = document.createDocumentFragment();
+        htmlParts.forEach(html => {
             const wrapper = document.createElement('div');
             wrapper.innerHTML = html;
-            shell.appendChild(wrapper);
-        }
+            fragment.appendChild(wrapper);
+        });
+        shell.appendChild(fragment);
 
         const loader = document.querySelector('.page-loader');
         if (loader) loader.remove();

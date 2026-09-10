@@ -1,10 +1,20 @@
 // Custom cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
-    function animateRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
-    animateRing();
+    let mx = 0, my = 0, rx = 0, ry = 0, ringRafId;
+    document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        cursor.style.transform = `translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
+        if (!ringRafId) ringRafId = requestAnimationFrame(animateRing);
+    }, { passive: true });
+    function animateRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
+        ringRafId = (Math.abs(mx - rx) > 0.1 || Math.abs(my - ry) > 0.1)
+            ? requestAnimationFrame(animateRing)
+            : null;
+    }
     document.querySelectorAll('a,button,.close-modal,.lightbox-prev,.lightbox-next,.hamburger,.about-tab-btn,.pillar-card,.bento-item,.tech-pill,.skills-filter-btn,.skill-card-compact').forEach(el => {
         el.addEventListener('mouseenter', () => { cursor.classList.add('expanded'); ring.classList.add('expanded'); });
         el.addEventListener('mouseleave', () => { cursor.classList.remove('expanded'); ring.classList.remove('expanded'); });
@@ -133,17 +143,19 @@ document.getElementById('email-form').addEventListener('submit', async e => {
         for (let i = 0; i < particleCount; i++) particles.push(new Particle());
 
         function connectParticles() {
+            const maxDist = 100;
+            ctx.lineWidth = 0.5;
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
+                    const distSq = dx * dx + dy * dy;
+                    if (distSq < maxDist * maxDist) {
+                        const dist = Math.sqrt(distSq);
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(200, 245, 66, ${0.06 * (1 - dist / 120)})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(200, 245, 66, ${0.06 * (1 - dist / maxDist)})`;
                         ctx.stroke();
                     }
                 }
@@ -192,16 +204,12 @@ document.getElementById('email-form').addEventListener('submit', async e => {
 // Project cards - toggle details expansion
     function toggleProjectDetails(card) {
         const details = card.querySelector('.project-details');
-        const hint = card.querySelector('.expand-hint i');
-        
-        if (details.style.display === 'none') {
-            details.style.display = 'block';
-            hint.classList.remove('bx-chevron-down');
-            hint.classList.add('bx-chevron-up');
-        } else {
-            details.style.display = 'none';
-            hint.classList.remove('bx-chevron-up');
-            hint.classList.add('bx-chevron-down');
+        const icon = card.querySelector('.expand-btn i');
+        const isOpen = details.style.display === 'block';
+        details.style.display = isOpen ? 'none' : 'block';
+        if (icon) {
+            icon.classList.toggle('bx-chevron-down', isOpen);
+            icon.classList.toggle('bx-chevron-up', !isOpen);
         }
     }
 
@@ -265,13 +273,21 @@ document.getElementById('email-form').addEventListener('submit', async e => {
 
     // Active nav
     const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(s => { if(window.scrollY >= s.offsetTop - 150) current = s.id; });
-        document.querySelectorAll('nav a').forEach(a => {
-            a.classList.toggle('active', a.getAttribute('href') === '#'+current);
-        });
-    });
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                let current = '';
+                sections.forEach(s => { if(window.scrollY >= s.offsetTop - 150) current = s.id; });
+                navLinks.forEach(a => {
+                    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+                });
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
 
     // ── About Section Tabs ──
     const aboutTabBtns = document.querySelectorAll('.about-tab-btn');

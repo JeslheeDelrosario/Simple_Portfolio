@@ -57,11 +57,8 @@ body::before {
   left: 0;
   pointer-events: none;
   z-index: 9999;
-  transition:
-    transform 0.15s ease,
-    width 0.2s,
-    height 0.2s;
-  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width 0.2s, height 0.2s;
 }
 .cursor-ring {
   width: 36px;
@@ -73,12 +70,11 @@ body::before {
   left: 0;
   pointer-events: none;
   z-index: 9998;
+  will-change: transform;
   transition:
-    transform 0.4s ease,
     width 0.3s,
     height 0.3s,
     border-color 0.3s;
-  transform: translate(-50%, -50%);
 }
 .cursor.expanded {
   width: 20px;
@@ -138,8 +134,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 28px 60px;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 10, 0.92);
   border-bottom: 1px solid var(--border);
 }
 
@@ -778,8 +773,7 @@ nav a:hover::after {
   overflow: hidden;
   padding: 18px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.85);
   z-index: 2;
   animation: fadeUp 1s ease 1s both;
 }
@@ -788,6 +782,7 @@ nav a:hover::after {
   gap: 60px;
   width: max-content;
   animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
 }
 .hero-marquee-item {
   display: flex;
@@ -1746,9 +1741,7 @@ nav a:hover::after {
 
 /* Card base */
 .project-card {
-  background: rgba(20, 20, 25, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(20, 20, 25, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 24px;
   overflow: hidden;
@@ -1756,6 +1749,7 @@ nav a:hover::after {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   align-self: start;
+  will-change: transform;
 }
 .project-card::before {
   content: "";
