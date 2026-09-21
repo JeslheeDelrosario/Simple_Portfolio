@@ -21,9 +21,17 @@
     });
 
     // Hamburger
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('navbar').classList.toggle('open');
-    });
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    const setNavigationOpen = (isOpen) => {
+        navbar.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        document.body.classList.toggle('menu-open', isOpen);
+    };
+    hamburger.addEventListener('click', () => setNavigationOpen(!navbar.classList.contains('open')));
+    navbar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setNavigationOpen(false)));
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') setNavigationOpen(false); });
 
     // Modals
     const modal = document.getElementById('contact-modal');
